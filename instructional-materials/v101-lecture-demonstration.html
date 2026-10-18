@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>CHEM V101 Lecture Demonstration — Limiting Reactant Visualization · Howard Han · Tenure Portfolio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Literata:ital,opsz,wght@0,7..72,300..700;1,7..72,300..700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/site.css">
+<script>(function(){try{var r=document.documentElement,p=localStorage.getItem('rd-page');r.setAttribute('data-page',p||'grey');['face','size','lead','margin','align'].forEach(function(k){var v=localStorage.getItem('rd-'+k);if(v)r.setAttribute('data-'+k,v);});}catch(e){document.documentElement.setAttribute('data-page','grey');}})();</script>
+</head>
+<body>
+<header class="status">
+  <div class="left">
+    <a class="ic back" href="index.html" aria-label="Back">‹</a>
+    <button type="button" class="ic" id="goto-btn" aria-expanded="false" aria-controls="goto" aria-label="Go to">☰</button>
+    <a class="name" href="../index.html">Howard Han</a>
+  </div>
+  <div class="right">
+    <span class="prog" aria-hidden="true"><i></i></span><span id="pct" class="pct">0%</span>
+    <button type="button" class="tx" id="daynight" aria-label="Day or night">Night</button>
+    <span class="aa"><button type="button" class="tx aa-btn" id="aa-btn" aria-expanded="false" aria-controls="aa-panel" aria-label="Font and layout">Aa</button><div class="panel" id="aa-panel" hidden>
+  <div class="tabs" role="tablist">
+    <button type="button" role="tab" aria-selected="true" data-tab="font">Font</button>
+    <button type="button" role="tab" aria-selected="false" data-tab="layout">Layout</button>
+  </div>
+  <div class="tab" data-tab="font">
+    <div class="opt"><span class="lbl">Typeface</span><span class="seg" data-var="face"><button type="button" data-v="serif" aria-pressed="false">Literata</button><button type="button" data-v="sans" aria-pressed="false">Inter</button></span></div>
+    <div class="opt"><span class="lbl">Size</span><span class="seg" data-var="size"><button type="button" data-v="1" aria-pressed="false">A</button><button type="button" data-v="2" aria-pressed="false">A</button><button type="button" data-v="3" aria-pressed="false">A</button><button type="button" data-v="4" aria-pressed="false">A</button><button type="button" data-v="5" aria-pressed="false">A</button></span></div>
+    <div class="opt"><span class="lbl">Line spacing</span><span class="seg" data-var="lead"><button type="button" data-v="tight" aria-pressed="false">Tight</button><button type="button" data-v="normal" aria-pressed="false">Normal</button><button type="button" data-v="loose" aria-pressed="false">Loose</button></span></div>
+  </div>
+  <div class="tab" data-tab="layout" hidden>
+    <div class="opt"><span class="lbl">Page color</span><span class="swatches" data-var="page"><button type="button" class="swatch sw-grey" data-v="grey" aria-label="Grey" aria-pressed="false"></button><button type="button" class="swatch sw-white" data-v="white" aria-label="White" aria-pressed="false"></button><button type="button" class="swatch sw-sepia" data-v="sepia" aria-label="Sepia" aria-pressed="false"></button><button type="button" class="swatch sw-dark" data-v="dark" aria-label="Dark" aria-pressed="false"></button></span></div>
+    <div class="opt"><span class="lbl">Alignment</span><span class="seg" data-var="align"><button type="button" data-v="justify" aria-pressed="false">Justified</button><button type="button" data-v="left" aria-pressed="false">Left</button></span></div>
+    <div class="opt"><span class="lbl">Margins</span><span class="seg" data-var="margin"><button type="button" data-v="narrow" aria-pressed="false">Narrow</button><button type="button" data-v="normal" aria-pressed="false">Normal</button><button type="button" data-v="wide" aria-pressed="false">Wide</button></span></div>
+  </div>
+  <button type="button" class="reset" id="aa-reset">Reset to defaults</button>
+</div></span>
+  </div>
+</header>
+<nav class="goto" id="goto" hidden aria-label="Go to">
+  <div class="goto-head"><span>Go To</span><button type="button" class="x" id="goto-close" aria-label="Close">×</button></div>
+  <a class="row" href="../index.html"><span class="t">Cover</span></a>
+  <details><summary class="row"><span class="n">1</span><span class="t">Overview</span><span class="tri" aria-hidden="true"></span></summary><a class="row sub" href="../overview/cover-letter.html"><span class="t">Cover Letter</span></a><a class="row sub" href="../overview/curriculum-vitae.html"><span class="t">Curriculum Vitae</span></a><a class="row sub" href="../overview/tenure-year-4-parameters.html"><span class="t">Tenure Year 4 Parameters</span></a><a class="row sub" href="../overview/timeline-of-meetings.html"><span class="t">Timeline of Meetings</span></a></details><details><summary class="row"><span class="n">2</span><span class="t">Teaching Insights</span><span class="tri" aria-hidden="true"></span></summary><a class="row sub" href="../teaching-insights/teaching-philosophy.html"><span class="t">Teaching Philosophy</span></a><a class="row sub" href="../teaching-insights/student-evaluations.html"><span class="t">Student Evaluations</span></a><a class="row sub" href="../teaching-insights/committee-observation-feedback.html"><span class="t">Committee Observation Feedback</span></a><a class="row sub" href="../teaching-insights/self-appraisal.html"><span class="t">Self Appraisal</span></a></details><details><summary class="row"><span class="n">3</span><span class="t">Course Design</span><span class="tri" aria-hidden="true"></span></summary><a class="row sub" href="../course-design/linked-lecture-lab.html"><span class="t">Linked Lecture–Lab Coordination</span></a><a class="row sub" href="../course-design/lab-quiz-redesign.html"><span class="t">Lab Quizzes</span></a><a class="row sub" href="../course-design/tool-evaluations.html"><span class="t">Tools I Tried</span></a></details><a class="row" href="../math-readiness/index.html"><span class="n">4</span><span class="t">Math Readiness Initiative</span></a><a class="row" href="../ai-integration/index.html"><span class="n">5</span><span class="t">AI Integration</span></a><details open><summary class="row"><span class="n">6</span><span class="t">Instructional Materials</span><span class="tri" aria-hidden="true"></span></summary><a class="row sub" href="../instructional-materials/sample-materials.html"><span class="t">Sample Materials</span></a><a class="row sub" href="../instructional-materials/v101-lab-manual-renewal.html"><span class="t">CHEM V101 Lab Manual Renewal Project</span></a><a class="row sub" href="../instructional-materials/v101-digital-ecosystem.html"><span class="t">CHEM V101 Experiment Video Reference Library</span></a><a class="row sub" href="../instructional-materials/v104-lab-demo-video-project.html"><span class="t">CHEM V104 Laboratory Demo Video Project</span></a><a class="row sub here" href="../instructional-materials/v101-lecture-demonstration.html"><span class="t">CHEM V101 Lecture Demonstration — Limiting Reactant Visualization</span></a><a class="row sub" href="../instructional-materials/lab-safety-video.html"><span class="t">Lab Safety Video Project</span></a><a class="row sub" href="../instructional-materials/v101-simulations.html"><span class="t">CHEM V101 Interactive Simulations</span></a></details><details><summary class="row"><span class="n">7</span><span class="t">Collaboration</span><span class="tri" aria-hidden="true"></span></summary><a class="row sub" href="../collaboration/informal-evaluation-and-mentorship.html"><span class="t">Informal Evaluation and Mentorship</span></a><a class="row sub" href="../collaboration/formal-peer-evaluation.html"><span class="t">Formal Peer Evaluation</span></a><a class="row sub" href="../collaboration/chemistry-faculty-introduction-board.html"><span class="t">Chemistry Faculty Introduction Board</span></a></details><details><summary class="row"><span class="n">8</span><span class="t">Professional Activities</span><span class="tri" aria-hidden="true"></span></summary><a class="row sub" href="../professional-activities/ztc-initiative.html"><span class="t">ZTC Initiative — CHEM V101</span></a><a class="row sub" href="../professional-activities/deag.html"><span class="t">Distance Education Advisory Group (DEAG)</span></a><a class="row sub" href="../professional-activities/as-chemistry-program-collaboration.html"><span class="t">A.S. in Chemistry Program Collaboration</span></a><a class="row sub" href="../professional-activities/project-sail.html"><span class="t">Project S:AIL</span></a><a class="row sub" href="../professional-activities/professional-development.html"><span class="t">Professional Development</span></a><a class="row sub" href="../professional-activities/humanizing-online-stem-academy.html"><span class="t">Humanizing Online STEM Academy</span></a><a class="row sub" href="../professional-activities/cert-training.html"><span class="t">CERT — Community Emergency Response Team Training</span></a></details><details><summary class="row"><span class="n">9</span><span class="t">Looking Ahead</span><span class="tri" aria-hidden="true"></span></summary><a class="row sub" href="../looking-ahead/improvement-plan.html"><span class="t">Improvement Plan</span></a><a class="row sub" href="../looking-ahead/fourth-year-reflection.html"><span class="t">Fourth-Year Reflection</span></a></details>
+</nav>
+<div id="flash" aria-hidden="true"></div>
+<main class="screen" id="screen">
+  <article class="page">
+    <header class="chapter">
+      <p class="orn" aria-hidden="true">§</p>
+      <h1>CHEM V101 Lecture Demonstration — Limiting Reactant Visualization</h1>
+      <p class="year">From Year 3</p>
+    </header>
+    <div class="prose">
+<h2>Overview</h2>
+<p>This short in-class demonstration was used to visualize the concept of limiting reactants during
+the Stoichiometry and Gas Laws lecture. Students often find the limiting reagent abstract when
+discussed purely as a calculation problem; this visual setup allowed them to observe how gas
+production stops once one reactant is consumed, even when the other remains in excess.</p>
+<p>Three 125 mL Erlenmeyer flasks were prepared with equal amounts of 1 M HCl (20 mL each) and
+varying masses of NaHCO₃ (1 g, 2 g, and 3 g). Balloons were fitted on top of each flask to collect
+the CO₂ gas produced. The different balloon sizes showed the reaction yield, which is set
+by whichever reactant runs out first (the limiting reactant).</p>
+<h2>Teaching purpose</h2>
+<p>While the reaction proceeded, students predicted which reactant would limit CO₂ formation,
+performed mole-ratio calculations, and compared their theoretical results with the observed
+balloon volumes. The demonstration was built around three ideas:</p>
+<ul>
+<li>The limiting reactant determines the theoretical yield.</li>
+<li>Adding excess of the other reactant does not increase product formation once the limit is
+reached.</li>
+<li>Stoichiometric reasoning can be directly connected to visual and quantitative data.</li>
+</ul>
+<figure class="fig"><img src="../assets/content/v101-lecture-demo/balloons-inflated.jpg" alt="" loading="lazy" decoding="async" data-eink><figcaption>Three 125 mL flasks of hydrochloric acid, each capped with a balloon. The balloon on the 1 g
+flask is small; the balloons on the 2 g and 3 g flasks are inflated to the same
+size.</figcaption></figure>
+<figure class="fig"><img src="../assets/content/v101-lecture-demo/balloons-annotated.png" alt="" loading="lazy" decoding="async" data-eink><figcaption>The same three flasks with labels added: carbon dioxide at the top with CO₂ molecules drawn
+inside the inflated balloon, baking soda at left, hydrochloric acid at
+right.</figcaption></figure>
+<figure class="fig"><img src="../assets/content/v101-lecture-demo/reaction.gif" alt="" loading="lazy" decoding="async" data-eink><figcaption>Animation of the three flasks as the reaction runs, the balloons rising from flat to
+inflated.</figcaption></figure>
+<h2>Procedure and result</h2>
+<p>Each flask contained 20 mL of 1 M HCl solution, while the baking soda (NaHCO₃) was measured and
+placed inside the balloon before attaching it to the flask. When the balloon was lifted, the
+powder fell into the acid, immediately generating bubbles of CO₂ gas that inflated the balloon.</p>
+<p>In the first two samples, increasing the mass of NaHCO₃ caused visibly larger balloons, and students
+could see that more reactant produced more gas. However, by the third flask (~3 g NaHCO₃), the
+balloon was no bigger than the second in any way you could see. More solid was present, but the reaction stopped once all
+available HCl had been consumed. This identified the acid as the limiting reactant.</p>
+<p>Past a certain point, adding more of one
+substance no longer increases the yield, because the other reactant is completely used up.</p>
+<h2>Reaction and stoichiometry</h2>
+<p>NaHCO₃ + HCl → NaCl + H₂O + CO₂ — 1 mol NaHCO₃ → 1 mol CO₂</p>
+<div class="table-wrap"><table class="ruled"><thead><tr><th>Sample</th><th>NaHCO₃ (g)</th><th>mol NaHCO₃</th><th>mol HCl</th><th>Limiting reagent</th><th>mol CO₂</th><th>Volume CO₂ @ STP (22.4 L mol⁻¹)</th></tr></thead><tbody><tr><td>#1</td><td>1.00</td><td>0.0119</td><td>0.020</td><td>NaHCO₃</td><td>0.0119</td><td>0.0119 × 22.4 = 0.267 L (267 mL)</td></tr><tr><td>#2</td><td>2.00</td><td>0.0238</td><td>0.020</td><td>HCl</td><td>0.0200</td><td>0.0200 × 22.4 = 0.448 L (448 mL)</td></tr><tr><td>#3</td><td>3.00</td><td>0.0357</td><td>0.020</td><td>HCl</td><td>0.0200</td><td>0.0200 × 22.4 = 0.448 L (448 mL)</td></tr></tbody></table></div>
+<h2>Conclusions</h2>
+<p>It ran on October 9, 2025, in a class Joe Selzler was observing. Two weeks earlier the written
+feedback from Jeffrey Wood&#39;s observation had recommended bringing live demonstrations into lecture,
+and Joe had suggested the same in conversation and lent me his books of demonstrations. His written
+record of the October 9 class notes the demonstration as a strength and asks that the discussion
+afterward run longer. My own read was less generous.</p>
+<p>The preparation happened before class and took longer than the demonstration itself did, and
+stopping to run it broke the flow of a lecture built around slides I annotate as I go. The balloons
+were also a coarse instrument for the thing I most needed them to show: the difference between the
+second flask and the third <em>is</em> the lesson, and it is the difference two inflated balloons show
+least well. What did read clearly from across the room was the part students already expected —
+more baking soda, more gas. That cause and effect was so obvious that it drew attention away
+from the mechanism underneath it. By the end of it I thought that running this in every section, every term,
+might be more than it gives back.</p>
+<p>It also made me settle how I divide lab and lecture. In my courses chemical demonstrations belong to
+lab, where the bench, the preparation time, and students standing close enough to watch are all part
+of the room, and in lecture I want the time to go to the lecture content.</p>
+<p>I still wanted to show more in lecture, and I kept asking how. What I arrived at was a simulation.
+It appears in the minute the calculation is happening, costs nothing to set up, and can run in
+every section and every term. The limiting reactant is one of the pieces in it, the same idea as
+these three flasks with the balloons replaced by two bars that drain at the rate the coefficients
+set and stop when one of them reaches the floor. It is documented in <strong>CHEM V101 Interactive
+Simulations</strong>.</p>
+
+    </div>
+    <nav class="pager" aria-label="Previous and next">
+    <a class="prev" href="v104-lab-demo-video-project.html"><span class="k">‹ Previous</span><span class="t">CHEM V104 Laboratory Demo Video Project</span></a>
+    <a class="next" href="lab-safety-video.html"><span class="k">Next ›</span><span class="t">Lab Safety Video Project</span></a>
+  </nav>
+  </article>
+</main><footer class="loc"><span class="l">Instructional Materials · 5 of 7</span><span class="r" id="loc-pct">0%</span></footer><script src="../assets/site.js"></script>
+</body>
+</html>

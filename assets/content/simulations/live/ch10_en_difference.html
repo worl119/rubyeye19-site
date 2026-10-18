@@ -1,0 +1,528 @@
+<!doctype html>
+<meta charset="utf-8">
+<title>Chapter 10 — Electronegativity Difference</title>
+<style>
+/* ══ shared theme — generated into every demo by apply_theme.py. Edit THIS file, then rerun the script. ══ */
+:root {
+  --bg: #ffffff; --fg: #1a1a1a; --muted: #6b6b6b; --line: #dedddb; --line-soft: #ecebe8;
+  --card: #ffffff; --accent: #1f5fa8; --accent-soft: #e8f0fa; --accent-line: #c6dcf2;
+  --ok: #1b5e20; --ok-soft: #e9f3ea; --ok-line: #bcd4bd;
+  --no: #b3261e; --no-soft: #fbeceb; --no-line: #e3bdb9;
+  --warn: #8a5a00; --warn-soft: #fdf3e0; --warn-line: #ecd9ac;
+  /* names the individual demos grew up with — all point at the five colours above */
+  --good: var(--ok); --good-soft: var(--ok-soft); --good-line: var(--ok-line);
+  --bad: var(--no); --bad-soft: var(--no-soft); --bad-line: var(--no-line);
+  --dead: var(--no); --dead-soft: var(--no-soft);
+  --sig: var(--ok); --sig-soft: #e2efe3; --non: var(--no); --non-soft: var(--no-soft);
+  --cation: var(--no); --cation-soft: var(--no-soft); --anion: var(--ok); --anion-soft: var(--ok-soft);
+  --a: var(--no); --a-soft: var(--no-soft); --b: var(--ok); --b-soft: var(--ok-soft);
+  --g: var(--no); --g-soft: var(--no-soft); --m: var(--accent); --m-soft: var(--accent-soft);
+  --p: var(--ok); --p-soft: var(--ok-soft);
+  --mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  --sans: -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
+  --r-card: 14px; --r-ctl: 9px;
+  --ease: cubic-bezier(.2, .7, .2, 1); --dur: .22s; --dur-slow: .5s;
+  --shadow: 0 1px 2px rgba(20,20,20,.04), 0 8px 24px -14px rgba(20,20,20,.14);
+}
+*, *::before, *::after { box-sizing: border-box; }
+body {
+  margin: 0 auto; padding: 32px 36px 48px; max-width: 1080px;
+  background: var(--bg); color: var(--fg); font: 16px/1.6 var(--sans);
+  -webkit-font-smoothing: antialiased;
+}
+.eyebrow { font-size: 12.5px; letter-spacing: .09em; text-transform: uppercase; color: var(--accent);
+           font-weight: 600; margin: 0 0 6px; }
+h1 { font-size: 26px; line-height: 1.2; font-weight: 650; letter-spacing: -.01em; margin: 0 0 8px; }
+.sub { color: var(--muted); font-size: 15px; margin: 0 0 26px; max-width: 72ch; }
+.tabs { display: flex; gap: 8px; margin: 0 0 24px; flex-wrap: wrap; }
+.tab { padding: 9px 18px; border: 1px solid var(--line); background: var(--card); border-radius: 999px;
+       cursor: pointer; font: inherit; font-size: 14.5px; color: var(--muted);
+       transition: background var(--dur) var(--ease), color var(--dur) var(--ease),
+                   border-color var(--dur) var(--ease), transform var(--dur) var(--ease); }
+.tab:hover { border-color: var(--accent); color: var(--accent); }
+.tab:active { transform: scale(.97); }
+.tab[aria-selected="true"] { background: var(--accent); border-color: var(--accent); color: #fff; }
+.hidden { display: none !important; }
+.card { background: var(--card); border: 1px solid var(--line); border-radius: var(--r-card);
+        padding: 24px 26px; margin-bottom: 22px; box-shadow: var(--shadow);
+        animation: fadeUp var(--dur-slow) var(--ease) both; }
+.card:nth-of-type(2) { animation-delay: .06s; }
+.card:nth-of-type(3) { animation-delay: .12s; }
+.card:nth-of-type(4) { animation-delay: .18s; }
+.card:nth-of-type(n+5) { animation-delay: .24s; }
+.wrap > .card, .cols > .card { margin-bottom: 0; }
+.card h2 { font-size: 12.5px; text-transform: uppercase; letter-spacing: .07em; color: var(--muted);
+           margin: 0 0 16px; font-weight: 600; }
+.row { display: flex; gap: 12px; align-items: center; flex-wrap: wrap; }
+.row + .row { margin-top: 14px; }
+label.f { font-size: 12px; color: var(--muted); text-transform: uppercase; letter-spacing: .06em; font-weight: 600; }
+button { font: inherit; }
+input[type=text], input[type=number], select {
+  font: inherit; padding: 8px 12px; border: 1px solid var(--line); border-radius: var(--r-ctl);
+  background: var(--card); color: var(--fg);
+  transition: border-color var(--dur) var(--ease), box-shadow var(--dur) var(--ease);
+}
+input[type=text]:focus, input[type=number]:focus, select:focus {
+  outline: none; border-color: var(--accent); box-shadow: 0 0 0 3px var(--accent-soft);
+}
+input[type=range] { accent-color: var(--accent); }
+.btn { border: 1px solid var(--line); background: var(--card); color: var(--fg); border-radius: var(--r-ctl);
+       padding: 8px 16px; cursor: pointer; font: inherit; font-size: 14.5px;
+       transition: border-color var(--dur) var(--ease), color var(--dur) var(--ease),
+                   background var(--dur) var(--ease), transform var(--dur) var(--ease); }
+.btn:hover { border-color: var(--accent); color: var(--accent); }
+.btn:active:not(:disabled) { transform: scale(.97); }
+.btn.primary { background: var(--accent); border-color: var(--accent); color: #fff; }
+.btn.primary:hover { filter: brightness(1.08); color: #fff; }
+.btn:disabled { opacity: .4; cursor: default; }
+.pill { border: 1px solid var(--line); background: var(--card); border-radius: 999px; padding: 7px 16px;
+        cursor: pointer; font: inherit; font-size: 14px; color: var(--muted);
+        transition: background var(--dur) var(--ease), color var(--dur) var(--ease),
+                    border-color var(--dur) var(--ease); }
+.pill:hover { border-color: var(--accent); color: var(--accent); }
+.pill[aria-pressed="true"] { background: var(--accent); border-color: var(--accent); color: #fff; }
+.note { font-size: 13.5px; color: var(--warn); background: var(--warn-soft); border: 1px solid var(--warn-line);
+        border-radius: 10px; padding: 12px 14px; margin-top: 14px; line-height: 1.55; }
+.note.plain { color: var(--muted); background: #f7f7f5; border-color: var(--line); }
+.note.bad  { color: #7d2b2b; background: var(--no-soft); border-color: var(--no-line); }
+.note.good { color: var(--ok); background: var(--ok-soft); border-color: var(--ok-line); }
+a { color: var(--accent); }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+/* motion utilities — added and removed by the demos' scripts */
+@keyframes fadeUp { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
+@keyframes pop    { 0% { transform: scale(.94); } 60% { transform: scale(1.04); } 100% { transform: none; } }
+@keyframes shake  { 0%, 100% { transform: translateX(0); } 20% { transform: translateX(-7px); }
+                    40% { transform: translateX(7px); } 60% { transform: translateX(-4px); } 80% { transform: translateX(4px); } }
+@keyframes flashOk { 0% { box-shadow: 0 0 0 0 rgba(27,94,32,.35); } 100% { box-shadow: 0 0 0 14px rgba(27,94,32,0); } }
+@keyframes flashNo { 0% { box-shadow: 0 0 0 0 rgba(179,38,30,.35); } 100% { box-shadow: 0 0 0 14px rgba(179,38,30,0); } }
+.anim-in    { animation: fadeUp var(--dur-slow) var(--ease) both; }
+.anim-pop   { animation: pop .38s var(--ease); }
+.anim-shake { animation: shake .42s var(--ease); }
+.anim-ok    { animation: flashOk .6s var(--ease); }
+.anim-no    { animation: flashNo .6s var(--ease); }
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+}
+/* full-screen button — parts/fullscreen.js */
+.fsbtn { height: 34px; border-radius: 999px; border: 1px solid var(--line); background: var(--card);
+         color: var(--fg); font: 600 12.5px/1 var(--sans, system-ui, sans-serif); cursor: pointer;
+         padding: 0 12px; margin-left: 4px; }
+.fsbtn.fsfloat { float: right; margin: -4px 0 8px 16px; position: relative; z-index: 5; }
+.fsbtn:hover { border-color: var(--accent); color: var(--accent); }
+html:fullscreen { background: var(--bg); overflow: auto; }
+@media print { .fsbtn { display: none; } }
+/* ══ end shared theme ══ */
+
+  .cols { display: grid; grid-template-columns: 1fr; gap: 22px; }
+  @media (min-width: 940px) { .cols { grid-template-columns: 1fr 1fr; align-items: start; } }
+
+  /* ── element pickers ── */
+  .pal { display: flex; flex-wrap: wrap; gap: 6px; }
+  .pal button { border: 1px solid var(--line); background: var(--card); border-radius: 9px;
+                padding: 6px 9px 5px; cursor: pointer; font: inherit; font-size: 15px; min-width: 46px;
+                line-height: 1.15; color: var(--fg);
+                transition: border-color var(--dur) var(--ease), background var(--dur) var(--ease),
+                            transform var(--dur) var(--ease); }
+  .pal button small { display: block; font-size: 10.5px; color: var(--muted); font-family: var(--mono); }
+  .pal button:hover { border-color: var(--accent); transform: translateY(-1px); }
+  .pal button[aria-pressed="true"] { background: var(--accent); border-color: var(--accent); color: #fff; }
+  .pal button[aria-pressed="true"] small { color: #cfe0f4; }
+  .pal button.metal { border-style: dashed; }
+  .palhead { display: flex; align-items: baseline; gap: 10px; margin-bottom: 10px; }
+  .palhead .f { margin: 0; }
+  .palhead .hint { font-size: 12.5px; color: var(--muted); }
+
+  /* ── the subtraction ── */
+  .sum { font-family: var(--mono); font-size: 21px; display: flex; align-items: center;
+         gap: 10px; flex-wrap: wrap; }
+  .sum .big { font-size: 30px; font-weight: 650; }
+  .sum .tag { font-size: 12.5px; color: var(--muted); font-family: var(--sans); }
+
+  /* ── the band scale ── */
+  .scale { margin-top: 6px; }
+  .bands { display: flex; height: 34px; border-radius: 8px; overflow: hidden; border: 1px solid var(--line); }
+  .band { display: flex; align-items: center; justify-content: center; font-size: 12.5px;
+          color: #4a4a4a; text-align: center; line-height: 1.2; padding: 0 6px;
+          transition: filter var(--dur) var(--ease); }
+  .band.b0 { background: #eef3ee; } .band.b1 { background: #fbeedd; } .band.b2 { background: #f6ddd6; }
+  .band.on { filter: saturate(1.9) brightness(.97); font-weight: 650; color: var(--fg); }
+  .ticks { position: relative; height: 34px; margin-top: 2px; font-family: var(--mono); font-size: 11px; color: var(--muted); }
+  .tick { position: absolute; transform: translateX(-50%); text-align: center; }
+  .tick i { display: block; width: 1px; height: 6px; background: var(--line); margin: 0 auto 2px; }
+  .markrow { position: relative; height: 30px; }
+  .mark { position: absolute; bottom: 0; transform: translateX(-50%); text-align: center;
+          transition: left .5s var(--ease); white-space: nowrap; }
+  .mark .val { font-family: var(--mono); font-size: 12.5px; color: #fff; background: var(--accent);
+               border-radius: 6px; padding: 2px 8px; display: inline-block; }
+  .mark .pin { display: block; width: 0; height: 0; margin: 0 auto;
+               border: 5px solid transparent; border-top-color: var(--accent); }
+  .rowlabels { display: flex; margin-top: 10px; font-size: 12.5px; color: var(--muted); }
+  .rowlabels div { flex: 1 1 0; text-align: center; padding: 0 6px; line-height: 1.4; }
+  .rowlabels div.on { color: var(--fg); font-weight: 600; }
+
+  /* ── the cloud ── */
+  .stage { background: #fbfbfa; border: 1px solid var(--line-soft); border-radius: 12px; }
+  .stage svg { width: 100%; display: block; height: 260px; }
+  .verdict { font-size: 19px; font-weight: 650; margin-top: 4px; }
+  .verdict small { display: block; font-size: 13.5px; font-weight: 400; color: var(--muted); margin-top: 3px; }
+  .v0 { color: var(--ok); } .v1 { color: var(--warn); } .v2 { color: var(--no); }
+
+  .presets { display: flex; flex-wrap: wrap; gap: 8px; }
+  .presets .btn { font-size: 14px; font-family: var(--mono); }
+  .analogy { font-size: 13.5px; color: var(--muted); margin-top: 12px; line-height: 1.55; }
+</style>
+
+<p class="eyebrow">CHEM V101 · Chapter 10</p>
+<h1>Electronegativity Difference — how far do the electrons go?</h1>
+<p class="sub">
+  Pick two elements. The bigger the gap in electronegativity, the further the shared electrons
+  drift toward the stronger atom — until, at the far end, they stop being shared at all. The
+  difference is a number, and the number tells you which kind of bond you have.
+</p>
+
+<div class="card">
+  <div class="palhead"><label class="f">Atom A</label><span class="hint" id="hintA"></span></div>
+  <div class="pal" id="palA"></div>
+  <div class="palhead" style="margin-top:18px"><label class="f">Atom B</label><span class="hint" id="hintB"></span></div>
+  <div class="pal" id="palB"></div>
+  <div class="analogy">Dashed border = metal. Electronegativity values are the one-decimal table used in class.</div>
+</div>
+
+<div class="card">
+  <h2>The difference</h2>
+  <div class="sum" id="sum"></div>
+  <div class="scale">
+    <div class="markrow" id="markrow"></div>
+    <div class="bands">
+      <div class="band b0" id="bd0" style="flex:0 0 0">Nonpolar covalent<br>0.0 – 0.4</div>
+      <div class="band b1" id="bd1" style="flex:0 0 0">Polar covalent<br>0.5 – 1.8</div>
+      <div class="band b2" id="bd2" style="flex:0 0 0">Ionic<br>1.9 – 3.3</div>
+    </div>
+    <div class="ticks" id="ticks"></div>
+    <div class="rowlabels">
+      <div id="rl0">electrons shared<br>equally</div>
+      <div id="rl1">electrons shared<br>unequally</div>
+      <div id="rl2">electrons<br>transferred</div>
+    </div>
+  </div>
+  <div id="caveat"></div>
+</div>
+
+<div class="cols">
+  <div class="card">
+    <h2>What the electrons do</h2>
+    <div class="stage"><svg id="cloud" viewBox="0 0 460 260" aria-label="electron cloud between two atoms"></svg></div>
+    <div class="verdict" id="verdict"></div>
+    <div class="analogy">
+      The class analogy: a crowd on a street drifts toward the more famous person. The cloud is a
+      picture of where the electrons spend their time — there are no percentages on it.
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>Bonds worked in class</h2>
+    <div class="presets" id="presets"></div>
+    <div class="analogy" style="margin-top:16px">
+      δ⁻ and δ⁺ are <b>partial</b> charges — the electrons leaned over but stayed shared. Full
+      + and − mean they left. That is the whole difference between polar covalent and ionic.
+    </div>
+  </div>
+</div>
+
+<script>
+/* ══ shared part: elements ══
+   Elements 1-54 (H to Xe -- the course does s, p, d only; f block is
+   declared out of scope in RUN 3). Generated into demos by apply_theme.py;
+   edit parts/elements.js.
+
+     ELEMENTS[i]  {z, sym, name, period, group, block, en}
+        group  1-18 (IUPAC); block s/p/d
+        en     Pauling electronegativity to ONE decimal, which is the scale the
+               class uses ("2.5 vs 3.0" for C and Cl in RUN 3). Noble gases: null.
+     FILL_ORDER   1s 2s 2p 3s 3p 4s 3d 4p 5s 4d 5p  (the 4s-before-3d dip)
+     CAP          electrons per sublevel: s 2, p 6, d 10
+     NOBLE        Z of the noble gases
+     EXCEPTIONS   the four the course names: Cr, Cu, Mo, Ag (one s electron
+                  moves down to make the d half-full or full)
+     valenceOf(z) main-group valence electrons (s + p of the highest n);
+                  transition metals: 2 (the course's rule -- d is never valence)
+*/
+const ELEMENTS = [
+  null,
+  {z:1,sym:'H',name:'hydrogen',period:1,group:1,block:'s',en:2.1},
+  {z:2,sym:'He',name:'helium',period:1,group:18,block:'s',en:null},
+  {z:3,sym:'Li',name:'lithium',period:2,group:1,block:'s',en:1.0},
+  {z:4,sym:'Be',name:'beryllium',period:2,group:2,block:'s',en:1.6},
+  {z:5,sym:'B',name:'boron',period:2,group:13,block:'p',en:2.0},
+  {z:6,sym:'C',name:'carbon',period:2,group:14,block:'p',en:2.5},
+  {z:7,sym:'N',name:'nitrogen',period:2,group:15,block:'p',en:3.0},
+  {z:8,sym:'O',name:'oxygen',period:2,group:16,block:'p',en:3.4},
+  {z:9,sym:'F',name:'fluorine',period:2,group:17,block:'p',en:4.0},
+  {z:10,sym:'Ne',name:'neon',period:2,group:18,block:'p',en:null},
+  {z:11,sym:'Na',name:'sodium',period:3,group:1,block:'s',en:0.9},
+  {z:12,sym:'Mg',name:'magnesium',period:3,group:2,block:'s',en:1.3},
+  {z:13,sym:'Al',name:'aluminum',period:3,group:13,block:'p',en:1.6},
+  {z:14,sym:'Si',name:'silicon',period:3,group:14,block:'p',en:1.9},
+  {z:15,sym:'P',name:'phosphorus',period:3,group:15,block:'p',en:2.2},
+  {z:16,sym:'S',name:'sulfur',period:3,group:16,block:'p',en:2.6},
+  {z:17,sym:'Cl',name:'chlorine',period:3,group:17,block:'p',en:3.0},
+  {z:18,sym:'Ar',name:'argon',period:3,group:18,block:'p',en:null},
+  {z:19,sym:'K',name:'potassium',period:4,group:1,block:'s',en:0.8},
+  {z:20,sym:'Ca',name:'calcium',period:4,group:2,block:'s',en:1.0},
+  {z:21,sym:'Sc',name:'scandium',period:4,group:3,block:'d',en:1.4},
+  {z:22,sym:'Ti',name:'titanium',period:4,group:4,block:'d',en:1.5},
+  {z:23,sym:'V',name:'vanadium',period:4,group:5,block:'d',en:1.6},
+  {z:24,sym:'Cr',name:'chromium',period:4,group:6,block:'d',en:1.7},
+  {z:25,sym:'Mn',name:'manganese',period:4,group:7,block:'d',en:1.6},
+  {z:26,sym:'Fe',name:'iron',period:4,group:8,block:'d',en:1.8},
+  {z:27,sym:'Co',name:'cobalt',period:4,group:9,block:'d',en:1.9},
+  {z:28,sym:'Ni',name:'nickel',period:4,group:10,block:'d',en:1.9},
+  {z:29,sym:'Cu',name:'copper',period:4,group:11,block:'d',en:1.9},
+  {z:30,sym:'Zn',name:'zinc',period:4,group:12,block:'d',en:1.7},
+  {z:31,sym:'Ga',name:'gallium',period:4,group:13,block:'p',en:1.8},
+  {z:32,sym:'Ge',name:'germanium',period:4,group:14,block:'p',en:2.0},
+  {z:33,sym:'As',name:'arsenic',period:4,group:15,block:'p',en:2.2},
+  {z:34,sym:'Se',name:'selenium',period:4,group:16,block:'p',en:2.6},
+  {z:35,sym:'Br',name:'bromine',period:4,group:17,block:'p',en:3.0},
+  {z:36,sym:'Kr',name:'krypton',period:4,group:18,block:'p',en:null},
+  {z:37,sym:'Rb',name:'rubidium',period:5,group:1,block:'s',en:0.8},
+  {z:38,sym:'Sr',name:'strontium',period:5,group:2,block:'s',en:1.0},
+  {z:39,sym:'Y',name:'yttrium',period:5,group:3,block:'d',en:1.2},
+  {z:40,sym:'Zr',name:'zirconium',period:5,group:4,block:'d',en:1.3},
+  {z:41,sym:'Nb',name:'niobium',period:5,group:5,block:'d',en:1.6},
+  {z:42,sym:'Mo',name:'molybdenum',period:5,group:6,block:'d',en:2.2},
+  {z:43,sym:'Tc',name:'technetium',period:5,group:7,block:'d',en:1.9},
+  {z:44,sym:'Ru',name:'ruthenium',period:5,group:8,block:'d',en:2.2},
+  {z:45,sym:'Rh',name:'rhodium',period:5,group:9,block:'d',en:2.3},
+  {z:46,sym:'Pd',name:'palladium',period:5,group:10,block:'d',en:2.2},
+  {z:47,sym:'Ag',name:'silver',period:5,group:11,block:'d',en:1.9},
+  {z:48,sym:'Cd',name:'cadmium',period:5,group:12,block:'d',en:1.7},
+  {z:49,sym:'In',name:'indium',period:5,group:13,block:'p',en:1.8},
+  {z:50,sym:'Sn',name:'tin',period:5,group:14,block:'p',en:2.0},
+  {z:51,sym:'Sb',name:'antimony',period:5,group:15,block:'p',en:2.1},
+  {z:52,sym:'Te',name:'tellurium',period:5,group:16,block:'p',en:2.1},
+  {z:53,sym:'I',name:'iodine',period:5,group:17,block:'p',en:2.7},
+  {z:54,sym:'Xe',name:'xenon',period:5,group:18,block:'p',en:null},
+];
+const BY_SYM = {}; ELEMENTS.forEach(e => { if (e) BY_SYM[e.sym] = e; });
+const FILL_ORDER = ['1s', '2s', '2p', '3s', '3p', '4s', '3d', '4p', '5s', '4d', '5p'];
+const CAP = {s: 2, p: 6, d: 10};
+const NOBLE = [2, 10, 18, 36, 54];
+const EXCEPTIONS = {24: {from: '4s', to: '3d'}, 29: {from: '4s', to: '3d'}, 42: {from: '5s', to: '4d'}, 47: {from: '5s', to: '4d'}};
+function valenceOf(z) {
+  const e = ELEMENTS[z];
+  if (!e) return 0;
+  if (e.block === 'd') return 2;
+  if (z === 2) return 2;
+  return e.group <= 2 ? e.group : e.group - 10;
+}
+/* ══ end shared part: elements ══ */
+
+const $ = s => document.querySelector(s);
+const PAL = ['H', 'B', 'C', 'N', 'O', 'F', 'Si', 'P', 'S', 'Cl', 'Br', 'I', 'Na', 'K', 'Mg', 'Ca', 'Al'];
+const METAL = new Set(['Na', 'K', 'Mg', 'Ca', 'Al', 'Li', 'Ba', 'Sr', 'Zn', 'Fe', 'Cu', 'Ag']);
+const en = s => BY_SYM[s].en;
+
+/* the reference chart's bands */
+const MAXD = 3.3, EDGE = [0.4, 1.8];
+const BAND = [
+  {name: 'Nonpolar covalent', doing: 'Electrons shared equally',   cls: 'v0'},
+  {name: 'Polar covalent',    doing: 'Electrons shared unequally', cls: 'v1'},
+  {name: 'Ionic',             doing: 'Electrons transferred',      cls: 'v2'}
+];
+const bandOf = d => d <= EDGE[0] ? 0 : d <= EDGE[1] ? 1 : 2;
+
+const S = {a: 'H', b: 'Cl', shown: {share: .5, split: 0, ionic: 0}, raf: null};
+
+/* ══════════════════════════ the picture ══════════════════════════
+   Two lobes of cloud under a goo filter. `share` is how much of the cloud sits
+   on the more electronegative atom; `split` pulls the lobes apart so the goo
+   pinches; `ionic` fades the shared cloud out and the ions in. All three are
+   tweened, so the electrons are seen to travel.                            */
+function targetShape(d, isIonic) {
+  const t = Math.min(1, d / 2.6);
+  return {share: 0.5 + 0.42 * t, split: 0.55 * t, ionic: isIonic ? 1 : 0};
+}
+function drawCloud(sh, lo, hi, dLabel) {
+  const W = 460, H = 260, cy = 132, gap = 78 + 30 * sh.split;
+  const xL = W / 2 - gap / 2, xR = W / 2 + gap / 2;
+  /* cores: the more electronegative atom keeps and gains, the other gives up */
+  const rL = 22 - 6 * sh.ionic, rR = 22 + 8 * sh.ionic;
+  const cloudR = 54, rLobeL = cloudR * (1 - sh.share) * 1.7, rLobeR = cloudR * sh.share * 1.7;
+  const op = 1 - sh.ionic;
+  let s = '<defs><filter id="goo"><feGaussianBlur in="SourceGraphic" stdDeviation="9" result="b"/>'
+        + '<feColorMatrix in="b" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 24 -10"/></filter></defs>';
+  /* the shared cloud */
+  s += '<g filter="url(#goo)" opacity="' + op.toFixed(3) + '" fill="#7b5ea7">'
+     +   '<circle cx="' + xL.toFixed(1) + '" cy="' + cy + '" r="' + rLobeL.toFixed(1) + '"/>'
+     +   '<circle cx="' + xR.toFixed(1) + '" cy="' + cy + '" r="' + rLobeR.toFixed(1) + '"/>'
+     + '</g>';
+  /* the ions, once the electrons have gone */
+  if (sh.ionic > 0.01) {
+    s += '<g opacity="' + sh.ionic.toFixed(3) + '">'
+       +   '<circle cx="' + (xL - 14) + '" cy="' + cy + '" r="' + (rL * 1.0).toFixed(1) + '" fill="#d98ab0"/>'
+       +   '<circle cx="' + (xR + 14) + '" cy="' + cy + '" r="' + (rR * 1.35).toFixed(1) + '" fill="#7b5ea7"/>'
+       + '</g>';
+  }
+  /* symbols, haloed so they read on the cloud or off it */
+  const lx = sh.ionic > 0.5 ? xL - 14 : xL, rx = sh.ionic > 0.5 ? xR + 14 : xR;
+  const label = (x, t) => '<text x="' + x.toFixed(1) + '" y="' + (cy + 9) + '" text-anchor="middle" font-size="26"'
+    + ' font-weight="700" fill="#1a1a1a" stroke="#fbfbfa" stroke-width="5" paint-order="stroke">' + t + '</text>';
+  s += label(lx, lo) + label(rx, hi);
+  /* charge labels */
+  if (dLabel === 'partial') {
+    s += '<text x="' + lx.toFixed(1) + '" y="' + (cy - 46) + '" text-anchor="middle" font-size="21" fill="#b3261e">δ⁺</text>';
+    s += '<text x="' + rx.toFixed(1) + '" y="' + (cy - 46) + '" text-anchor="middle" font-size="21" fill="#1f5fa8">δ⁻</text>';
+  } else if (dLabel === 'full') {
+    s += '<text x="' + lx.toFixed(1) + '" y="' + (cy - 46) + '" text-anchor="middle" font-size="24" fill="#b3261e">+</text>';
+    s += '<text x="' + rx.toFixed(1) + '" y="' + (cy - 46) + '" text-anchor="middle" font-size="24" fill="#1f5fa8">−</text>';
+    s += '<text x="' + (W / 2) + '" y="' + (cy + 78) + '" text-anchor="middle" font-size="13" fill="#6b6b6b">the electron left — these are ions now</text>';
+  } else {
+    s += '<text x="' + (W / 2) + '" y="' + (cy + 78) + '" text-anchor="middle" font-size="13" fill="#6b6b6b">the cloud sits in the middle — no charge on either end</text>';
+  }
+  return s;
+}
+function tweenTo(goal, lo, hi, label) {
+  cancelAnimationFrame(S.raf);
+  const from = {...S.shown}, t0 = performance.now(), DUR = 520;
+  const ease = x => x < .5 ? 4 * x * x * x : 1 - Math.pow(-2 * x + 2, 3) / 2;
+  (function frame(now) {
+    const k = Math.min(1, (now - t0) / DUR), e = ease(k);
+    S.shown = {
+      share: from.share + (goal.share - from.share) * e,
+      split: from.split + (goal.split - from.split) * e,
+      ionic: from.ionic + (goal.ionic - from.ionic) * e
+    };
+    $('#cloud').innerHTML = drawCloud(S.shown, lo, hi, label);
+    if (k < 1) S.raf = requestAnimationFrame(frame);
+  })(performance.now());
+}
+
+/* ══════════════════════════ where the two rules disagree ══════════════════════════
+   The notes classify by metal + nonmetal and state no cutoff; the chart states a
+   cutoff and knows nothing about metals. On this palette they disagree on 44 of
+   136 pairs, so the demo says which rule is which instead of picking one. */
+function caveat(d, band) {
+  const A = S.a, B = S.b, mA = METAL.has(A), mB = METAL.has(B);
+  if (mA && mB) return {k: 'plain', t: 'Two metals — this chart is about bonds between a metal and a nonmetal, or between two nonmetals. Metals bond to each other a third way.'};
+  if (mA !== mB && band !== 2) {
+    const m = mA ? A : B, n = mA ? B : A;
+    return {k: 'warn', t: '<b>The two rules disagree here.</b> <b>' + m + '</b> is a metal and <b>' + n + '</b> is a nonmetal, so in class this bond is <b>ionic</b> — but the difference, ' + d.toFixed(1) + ', lands in ' + BAND[band].name.toLowerCase() + '. The scale is a guide; <b>metal + nonmetal</b> is the rule you use to name the bond.'};
+  }
+  if (mA === mB && band === 2) {
+    return {k: 'warn', t: '<b>The two rules disagree here.</b> Both are nonmetals, so they <b>share</b> — but the difference is ' + d.toFixed(1) + ', and the scale calls 1.9 and up ionic. HF is the classic case: very lopsided sharing, still a molecule.'};
+  }
+  if (Math.abs(d - EDGE[0]) < 0.051) {
+    return {k: 'plain', t: 'Right on the first wall. A gap this small is usually treated as nonpolar — which is why hydrocarbons are nonpolar — even though a very short dipole arrow could still be drawn.'};
+  }
+  if (Math.abs(d - EDGE[1]) < 0.051) return {k: 'plain', t: 'Right on the second wall. Nothing changes suddenly at 1.9 — the chart draws a line across something that is really a slope.'};
+  return null;
+}
+
+/* ══════════════════════════ render ══════════════════════════ */
+function render() {
+  const A = S.a, B = S.b, eA = en(A), eB = en(B);
+  const hi = eA >= eB ? A : B, lo = eA >= eB ? B : A;      /* hi = the more electronegative */
+  const d = Math.round(Math.abs(eA - eB) * 10) / 10;
+  const band = bandOf(d), isIonic = band === 2;
+  const bothMetal = METAL.has(A) && METAL.has(B);          /* metallic — the chart does not cover it */
+
+  $('#sum').innerHTML =
+      '<span>' + hi + ' <span style="color:var(--muted)">' + en(hi).toFixed(1) + '</span></span>'
+    + '<span style="color:var(--muted)">−</span>'
+    + '<span>' + lo + ' <span style="color:var(--muted)">' + en(lo).toFixed(1) + '</span></span>'
+    + '<span style="color:var(--muted)">=</span>'
+    + '<span class="big">' + d.toFixed(1) + '</span>'
+    + '<span class="tag">electronegativity difference — always the larger minus the smaller</span>';
+
+  /* bands sized to their real width on a 0 → 3.3 axis */
+  const w = [EDGE[0] + 0.05, EDGE[1] - EDGE[0], MAXD - EDGE[1] + 0.05];
+  [0, 1, 2].forEach(i => {
+    const el = $('#bd' + i);
+    el.style.flex = '0 0 ' + (100 * w[i] / MAXD).toFixed(2) + '%';
+    el.classList.toggle('on', !bothMetal && i === band);
+    $('#rl' + i).classList.toggle('on', !bothMetal && i === band);
+  });
+  $('#markrow').innerHTML = '<span class="mark" style="left:' + (100 * Math.min(d, MAXD) / MAXD).toFixed(2) + '%">'
+    + '<span class="val">' + d.toFixed(1) + '</span><span class="pin"></span></span>';
+  let ticks = '';
+  for (let v = 0; v <= 3; v += 0.5) ticks += '<span class="tick" style="left:' + (100 * v / MAXD).toFixed(2) + '%"><i></i>' + v.toFixed(1) + '</span>';
+  $('#ticks').innerHTML = ticks;
+
+  $('#verdict').innerHTML = bothMetal
+    ? '<span style="color:var(--muted)">Not on this chart</span><small>Two metals make a <b>metallic</b> bond — the electrons are pooled, neither shared as a pair nor handed over. The bands describe metal + nonmetal and nonmetal + nonmetal.</small>'
+    : '<span class="' + BAND[band].cls + '">' + BAND[band].name + '</span>'
+      + '<small>' + BAND[band].doing + (band === 1 ? ' — the shared pair leans toward ' + hi + '.' : band === 0 ? '.' : ' — ' + lo + ' hands one over to ' + hi + '.') + '</small>';
+
+  const c = caveat(d, band);
+  $('#caveat').innerHTML = c ? '<div class="note' + (c.k === 'plain' ? ' plain' : '') + '" style="margin-top:16px">' + c.t + '</div>' : '';
+
+  tweenTo(targetShape(d, isIonic && !bothMetal), lo, hi, bothMetal ? 'none' : isIonic ? 'full' : band === 1 ? 'partial' : 'none');
+
+  ['A', 'B'].forEach(k => {
+    const sym = k === 'A' ? A : B;
+    document.querySelectorAll('#pal' + k + ' button').forEach(b => b.setAttribute('aria-pressed', String(b.dataset.s === sym)));
+    $('#hint' + k) .textContent = sym + ' · electronegativity ' + en(sym).toFixed(1) + (METAL.has(sym) ? ' · metal' : '');
+  });
+}
+
+['A', 'B'].forEach(k => {
+  $('#pal' + k).innerHTML = PAL.map(s =>
+    '<button data-k="' + k + '" data-s="' + s + '" class="' + (METAL.has(s) ? 'metal' : '') + '">'
+    + s + '<small>' + en(s).toFixed(1) + '</small></button>').join('');
+});
+document.addEventListener('click', e => {
+  const b = e.target.closest('.pal button');
+  if (!b) return;
+  S[b.dataset.k === 'A' ? 'a' : 'b'] = b.dataset.s;
+  render();
+});
+
+/* presets: the bonds the notes work, plus the ionic compounds from the same chapter */
+const PRESETS = [
+  {t: 'H–H', a: 'H', b: 'H'}, {t: 'C–H', a: 'C', b: 'H'}, {t: 'C–Cl', a: 'C', b: 'Cl'},
+  {t: 'C–F', a: 'C', b: 'F'}, {t: 'S–O', a: 'S', b: 'O'}, {t: 'H–Cl', a: 'H', b: 'Cl'},
+  {t: 'H–F', a: 'H', b: 'F'}, {t: 'Na–Cl', a: 'Na', b: 'Cl'}, {t: 'Al–O', a: 'Al', b: 'O'},
+  {t: 'K–F', a: 'K', b: 'F'}
+];
+$('#presets').innerHTML = PRESETS.map((p, i) => '<button class="btn" data-p="' + i + '">' + p.t + '</button>').join('');
+$('#presets').addEventListener('click', e => {
+  const b = e.target.closest('[data-p]');
+  if (!b) return;
+  const p = PRESETS[+b.dataset.p];
+  S.a = p.a; S.b = p.b; render();
+});
+
+render();
+</script>
+<script>
+/* ══ shared part: fullscreen ══
+   A "Full screen" button on every demo. Generated into each demo by
+   apply_theme.py; edit parts/fullscreen.js, not the copy.
+
+   Why: in Canvas the demo sits in an iframe beside the course menu, and on the
+   projector the menu eats the width (Howard, 2026-09-27). The page iframe
+   already carries allowfullscreen (deploy_demo.py), so the demo can ask.
+   Goes into the display-size bar where a demo has one, otherwise floats at
+   the top right. Stays out of the page where the browser refuses full screen
+   (the Canvas iOS app, for one). Styles are in theme.css (.fsbtn). */
+(function () {
+  var root = document.documentElement;
+  var req = root.requestFullscreen || root.webkitRequestFullscreen;
+  if (!req || !(document.fullscreenEnabled || document.webkitFullscreenEnabled)) return;
+  var on = function () { return document.fullscreenElement || document.webkitFullscreenElement; };
+  var b = document.createElement("button");
+  b.type = "button"; b.className = "fsbtn"; b.textContent = "Full screen";
+  var bar = document.querySelector(".zoombar");
+  if (bar) bar.appendChild(b);
+  else { b.className += " fsfloat"; document.body.insertBefore(b, document.body.firstChild); }
+  b.addEventListener("click", function () {
+    if (on()) (document.exitFullscreen || document.webkitExitFullscreen).call(document);
+    else req.call(root);
+  });
+  var label = function () { b.textContent = on() ? "Exit full screen" : "Full screen"; };
+  document.addEventListener("fullscreenchange", label);
+  document.addEventListener("webkitfullscreenchange", label);
+})();
+/* ══ end shared part: fullscreen ══ */
+</script>

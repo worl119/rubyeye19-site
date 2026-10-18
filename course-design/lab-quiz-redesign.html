@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Lab Quizzes · Howard Han · Tenure Portfolio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Literata:ital,opsz,wght@0,7..72,300..700;1,7..72,300..700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/site.css">
+<script>(function(){try{var r=document.documentElement,p=localStorage.getItem('rd-page');r.setAttribute('data-page',p||'grey');['face','size','lead','margin','align'].forEach(function(k){var v=localStorage.getItem('rd-'+k);if(v)r.setAttribute('data-'+k,v);});}catch(e){document.documentElement.setAttribute('data-page','grey');}})();</script>
+</head>
+<body>
+<header class="status">
+  <div class="left">
+    <a class="ic back" href="index.html" aria-label="Back">‹</a>
+    <button type="button" class="ic" id="goto-btn" aria-expanded="false" aria-controls="goto" aria-label="Go to">☰</button>
+    <a class="name" href="../index.html">Howard Han</a>
+  </div>
+  <div class="right">
+    <span class="prog" aria-hidden="true"><i></i></span><span id="pct" class="pct">0%</span>
+    <button type="button" class="tx" id="daynight" aria-label="Day or night">Night</button>
+    <span class="aa"><button type="button" class="tx aa-btn" id="aa-btn" aria-expanded="false" aria-controls="aa-panel" aria-label="Font and layout">Aa</button><div class="panel" id="aa-panel" hidden>
+  <div class="tabs" role="tablist">
+    <button type="button" role="tab" aria-selected="true" data-tab="font">Font</button>
+    <button type="button" role="tab" aria-selected="false" data-tab="layout">Layout</button>
+  </div>
+  <div class="tab" data-tab="font">
+    <div class="opt"><span class="lbl">Typeface</span><span class="seg" data-var="face"><button type="button" data-v="serif" aria-pressed="false">Literata</button><button type="button" data-v="sans" aria-pressed="false">Inter</button></span></div>
+    <div class="opt"><span class="lbl">Size</span><span class="seg" data-var="size"><button type="button" data-v="1" aria-pressed="false">A</button><button type="button" data-v="2" aria-pressed="false">A</button><button type="button" data-v="3" aria-pressed="false">A</button><button type="button" data-v="4" aria-pressed="false">A</button><button type="button" data-v="5" aria-pressed="false">A</button></span></div>
+    <div class="opt"><span class="lbl">Line spacing</span><span class="seg" data-var="lead"><button type="button" data-v="tight" aria-pressed="false">Tight</button><button type="button" data-v="normal" aria-pressed="false">Normal</button><button type="button" data-v="loose" aria-pressed="false">Loose</button></span></div>
+  </div>
+  <div class="tab" data-tab="layout" hidden>
+    <div class="opt"><span class="lbl">Page color</span><span class="swatches" data-var="page"><button type="button" class="swatch sw-grey" data-v="grey" aria-label="Grey" aria-pressed="false"></button><button type="button" class="swatch sw-white" data-v="white" aria-label="White" aria-pressed="false"></button><button type="button" class="swatch sw-sepia" data-v="sepia" aria-label="Sepia" aria-pressed="false"></button><button type="button" class="swatch sw-dark" data-v="dark" aria-label="Dark" aria-pressed="false"></button></span></div>
+    <div class="opt"><span class="lbl">Alignment</span><span class="seg" data-var="align"><button type="button" data-v="justify" aria-pressed="false">Justified</button><button type="button" data-v="left" aria-pressed="false">Left</button></span></div>
+    <div class="opt"><span class="lbl">Margins</span><span class="seg" data-var="margin"><button type="button" data-v="narrow" aria-pressed="false">Narrow</button><button type="button" data-v="normal" aria-pressed="false">Normal</button><button type="button" data-v="wide" aria-pressed="false">Wide</button></span></div>
+  </div>
+  <button type="button" class="reset" id="aa-reset">Reset to defaults</button>
+</div></span>
+  </div>
+</header>
+<nav class="goto" id="goto" hidden aria-label="Go to">
+  <div class="goto-head"><span>Go To</span><button type="button" class="x" id="goto-close" aria-label="Close">×</button></div>
+  <a class="row" href="../index.html"><span class="t">Cover</span></a>
+  <details><summary class="row"><span class="n">1</span><span class="t">Overview</span><span class="tri" aria-hidden="true"></span></summary><a class="row sub" href="../overview/cover-letter.html"><span class="t">Cover Letter</span></a><a class="row sub" href="../overview/curriculum-vitae.html"><span class="t">Curriculum Vitae</span></a><a class="row sub" href="../overview/tenure-year-4-parameters.html"><span class="t">Tenure Year 4 Parameters</span></a><a class="row sub" href="../overview/timeline-of-meetings.html"><span class="t">Timeline of Meetings</span></a></details><details><summary class="row"><span class="n">2</span><span class="t">Teaching Insights</span><span class="tri" aria-hidden="true"></span></summary><a class="row sub" href="../teaching-insights/teaching-philosophy.html"><span class="t">Teaching Philosophy</span></a><a class="row sub" href="../teaching-insights/student-evaluations.html"><span class="t">Student Evaluations</span></a><a class="row sub" href="../teaching-insights/committee-observation-feedback.html"><span class="t">Committee Observation Feedback</span></a><a class="row sub" href="../teaching-insights/self-appraisal.html"><span class="t">Self Appraisal</span></a></details><details open><summary class="row"><span class="n">3</span><span class="t">Course Design</span><span class="tri" aria-hidden="true"></span></summary><a class="row sub" href="../course-design/linked-lecture-lab.html"><span class="t">Linked Lecture–Lab Coordination</span></a><a class="row sub here" href="../course-design/lab-quiz-redesign.html"><span class="t">Lab Quizzes</span></a><a class="row sub" href="../course-design/tool-evaluations.html"><span class="t">Tools I Tried</span></a></details><a class="row" href="../math-readiness/index.html"><span class="n">4</span><span class="t">Math Readiness Initiative</span></a><a class="row" href="../ai-integration/index.html"><span class="n">5</span><span class="t">AI Integration</span></a><details><summary class="row"><span class="n">6</span><span class="t">Instructional Materials</span><span class="tri" aria-hidden="true"></span></summary><a class="row sub" href="../instructional-materials/sample-materials.html"><span class="t">Sample Materials</span></a><a class="row sub" href="../instructional-materials/v101-lab-manual-renewal.html"><span class="t">CHEM V101 Lab Manual Renewal Project</span></a><a class="row sub" href="../instructional-materials/v101-digital-ecosystem.html"><span class="t">CHEM V101 Experiment Video Reference Library</span></a><a class="row sub" href="../instructional-materials/v104-lab-demo-video-project.html"><span class="t">CHEM V104 Laboratory Demo Video Project</span></a><a class="row sub" href="../instructional-materials/v101-lecture-demonstration.html"><span class="t">CHEM V101 Lecture Demonstration — Limiting Reactant Visualization</span></a><a class="row sub" href="../instructional-materials/lab-safety-video.html"><span class="t">Lab Safety Video Project</span></a><a class="row sub" href="../instructional-materials/v101-simulations.html"><span class="t">CHEM V101 Interactive Simulations</span></a></details><details><summary class="row"><span class="n">7</span><span class="t">Collaboration</span><span class="tri" aria-hidden="true"></span></summary><a class="row sub" href="../collaboration/informal-evaluation-and-mentorship.html"><span class="t">Informal Evaluation and Mentorship</span></a><a class="row sub" href="../collaboration/formal-peer-evaluation.html"><span class="t">Formal Peer Evaluation</span></a><a class="row sub" href="../collaboration/chemistry-faculty-introduction-board.html"><span class="t">Chemistry Faculty Introduction Board</span></a></details><details><summary class="row"><span class="n">8</span><span class="t">Professional Activities</span><span class="tri" aria-hidden="true"></span></summary><a class="row sub" href="../professional-activities/ztc-initiative.html"><span class="t">ZTC Initiative — CHEM V101</span></a><a class="row sub" href="../professional-activities/deag.html"><span class="t">Distance Education Advisory Group (DEAG)</span></a><a class="row sub" href="../professional-activities/as-chemistry-program-collaboration.html"><span class="t">A.S. in Chemistry Program Collaboration</span></a><a class="row sub" href="../professional-activities/project-sail.html"><span class="t">Project S:AIL</span></a><a class="row sub" href="../professional-activities/professional-development.html"><span class="t">Professional Development</span></a><a class="row sub" href="../professional-activities/humanizing-online-stem-academy.html"><span class="t">Humanizing Online STEM Academy</span></a><a class="row sub" href="../professional-activities/cert-training.html"><span class="t">CERT — Community Emergency Response Team Training</span></a></details><details><summary class="row"><span class="n">9</span><span class="t">Looking Ahead</span><span class="tri" aria-hidden="true"></span></summary><a class="row sub" href="../looking-ahead/improvement-plan.html"><span class="t">Improvement Plan</span></a><a class="row sub" href="../looking-ahead/fourth-year-reflection.html"><span class="t">Fourth-Year Reflection</span></a></details>
+</nav>
+<div id="flash" aria-hidden="true"></div>
+<main class="screen" id="screen">
+  <article class="page">
+    <header class="chapter">
+      <p class="orn" aria-hidden="true">§</p>
+      <h1>Lab Quizzes</h1>
+      
+    </header>
+    <div class="prose">
+<p>Lab quizzes in CHEM V101 are ten multiple-choice items on paper, taken in class about a week after
+the experiment they cover and graded on ZipGrade. Each experiment has one.</p>
+<p>I wanted these quizzes to focus on the hands-on experience (the work at the bench and what the
+student had to account for in writing the report) rather than repeat lecture content. The lecture
+quizzes and exams already cover that material.</p>
+<p>The reason was practical. At the time, the lab and
+lecture sections of a course were often taught by different instructors. A quiz drawn from lecture
+material asked a lab instructor to grade content they had not taught, on a schedule they did not
+set, and it returned nothing about what had happened in the lab.</p>
+<p>Typical questions:</p>
+<ul>
+<li>How much deionized water went into each well of the spot plate? <em>(Exp 1)</em></li>
+<li>Which reagent was added first, to test for barium? <em>(Exp 5)</em></li>
+<li>Why must the baseline and the sample dots be marked in pencil rather than pen? <em>(Exp 11)</em></li>
+<li>What did you record as the initial buret reading for Trial 1? <em>(Exp 16)</em></li>
+</ul>
+<p>A student who was at the bench and wrote their own report can answer these. A student who skimmed
+the manual cannot.</p>
+<p>I hold to two things in writing them. A quiz should register whether a student took part in the
+experiment, and catch the one whose partner did the work. And it
+should not ask what a student&#39;s own sample looked like. An experiment that failed should not cost
+points; the question asks what the test shows when it works.</p>
+<p>I revise the quizzes as the course changes. Before and during Fall 2026 I rewrote two of them, one
+because it had a question written against a lab manual no longer in use. For Experiment 2 this fall
+I also gave students a one-page checklist to mark during the experiment. It has fifteen boxes
+arranged by the parts of the procedure, and each of the ten questions on that experiment&#39;s quiz
+corresponds to at least one box, so a student who works through the checklist at the bench has
+already met what the quiz will ask.</p>
+
+    </div>
+    <nav class="pager" aria-label="Previous and next">
+    <a class="prev" href="linked-lecture-lab.html"><span class="k">‹ Previous</span><span class="t">Linked Lecture–Lab Coordination</span></a>
+    <a class="next" href="tool-evaluations.html"><span class="k">Next ›</span><span class="t">Tools I Tried</span></a>
+  </nav>
+  </article>
+</main><footer class="loc"><span class="l">Course Design · 2 of 3</span><span class="r" id="loc-pct">0%</span></footer><script src="../assets/site.js"></script>
+</body>
+</html>

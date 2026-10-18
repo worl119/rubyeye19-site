@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>CHEM V101 Interactive Simulations · Howard Han · Tenure Portfolio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Literata:ital,opsz,wght@0,7..72,300..700;1,7..72,300..700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/site.css">
+<script>(function(){try{var r=document.documentElement,p=localStorage.getItem('rd-page');r.setAttribute('data-page',p||'grey');['face','size','lead','margin','align'].forEach(function(k){var v=localStorage.getItem('rd-'+k);if(v)r.setAttribute('data-'+k,v);});}catch(e){document.documentElement.setAttribute('data-page','grey');}})();</script>
+</head>
+<body>
+<header class="status">
+  <div class="left">
+    <a class="ic back" href="index.html" aria-label="Back">‹</a>
+    <button type="button" class="ic" id="goto-btn" aria-expanded="false" aria-controls="goto" aria-label="Go to">☰</button>
+    <a class="name" href="../index.html">Howard Han</a>
+  </div>
+  <div class="right">
+    <span class="prog" aria-hidden="true"><i></i></span><span id="pct" class="pct">0%</span>
+    <button type="button" class="tx" id="daynight" aria-label="Day or night">Night</button>
+    <span class="aa"><button type="button" class="tx aa-btn" id="aa-btn" aria-expanded="false" aria-controls="aa-panel" aria-label="Font and layout">Aa</button><div class="panel" id="aa-panel" hidden>
+  <div class="tabs" role="tablist">
+    <button type="button" role="tab" aria-selected="true" data-tab="font">Font</button>
+    <button type="button" role="tab" aria-selected="false" data-tab="layout">Layout</button>
+  </div>
+  <div class="tab" data-tab="font">
+    <div class="opt"><span class="lbl">Typeface</span><span class="seg" data-var="face"><button type="button" data-v="serif" aria-pressed="false">Literata</button><button type="button" data-v="sans" aria-pressed="false">Inter</button></span></div>
+    <div class="opt"><span class="lbl">Size</span><span class="seg" data-var="size"><button type="button" data-v="1" aria-pressed="false">A</button><button type="button" data-v="2" aria-pressed="false">A</button><button type="button" data-v="3" aria-pressed="false">A</button><button type="button" data-v="4" aria-pressed="false">A</button><button type="button" data-v="5" aria-pressed="false">A</button></span></div>
+    <div class="opt"><span class="lbl">Line spacing</span><span class="seg" data-var="lead"><button type="button" data-v="tight" aria-pressed="false">Tight</button><button type="button" data-v="normal" aria-pressed="false">Normal</button><button type="button" data-v="loose" aria-pressed="false">Loose</button></span></div>
+  </div>
+  <div class="tab" data-tab="layout" hidden>
+    <div class="opt"><span class="lbl">Page color</span><span class="swatches" data-var="page"><button type="button" class="swatch sw-grey" data-v="grey" aria-label="Grey" aria-pressed="false"></button><button type="button" class="swatch sw-white" data-v="white" aria-label="White" aria-pressed="false"></button><button type="button" class="swatch sw-sepia" data-v="sepia" aria-label="Sepia" aria-pressed="false"></button><button type="button" class="swatch sw-dark" data-v="dark" aria-label="Dark" aria-pressed="false"></button></span></div>
+    <div class="opt"><span class="lbl">Alignment</span><span class="seg" data-var="align"><button type="button" data-v="justify" aria-pressed="false">Justified</button><button type="button" data-v="left" aria-pressed="false">Left</button></span></div>
+    <div class="opt"><span class="lbl">Margins</span><span class="seg" data-var="margin"><button type="button" data-v="narrow" aria-pressed="false">Narrow</button><button type="button" data-v="normal" aria-pressed="false">Normal</button><button type="button" data-v="wide" aria-pressed="false">Wide</button></span></div>
+  </div>
+  <button type="button" class="reset" id="aa-reset">Reset to defaults</button>
+</div></span>
+  </div>
+</header>
+<nav class="goto" id="goto" hidden aria-label="Go to">
+  <div class="goto-head"><span>Go To</span><button type="button" class="x" id="goto-close" aria-label="Close">×</button></div>
+  <a class="row" href="../index.html"><span class="t">Cover</span></a>
+  <details><summary class="row"><span class="n">1</span><span class="t">Overview</span><span class="tri" aria-hidden="true"></span></summary><a class="row sub" href="../overview/cover-letter.html"><span class="t">Cover Letter</span></a><a class="row sub" href="../overview/curriculum-vitae.html"><span class="t">Curriculum Vitae</span></a><a class="row sub" href="../overview/tenure-year-4-parameters.html"><span class="t">Tenure Year 4 Parameters</span></a><a class="row sub" href="../overview/timeline-of-meetings.html"><span class="t">Timeline of Meetings</span></a></details><details><summary class="row"><span class="n">2</span><span class="t">Teaching Insights</span><span class="tri" aria-hidden="true"></span></summary><a class="row sub" href="../teaching-insights/teaching-philosophy.html"><span class="t">Teaching Philosophy</span></a><a class="row sub" href="../teaching-insights/student-evaluations.html"><span class="t">Student Evaluations</span></a><a class="row sub" href="../teaching-insights/committee-observation-feedback.html"><span class="t">Committee Observation Feedback</span></a><a class="row sub" href="../teaching-insights/self-appraisal.html"><span class="t">Self Appraisal</span></a></details><details><summary class="row"><span class="n">3</span><span class="t">Course Design</span><span class="tri" aria-hidden="true"></span></summary><a class="row sub" href="../course-design/linked-lecture-lab.html"><span class="t">Linked Lecture–Lab Coordination</span></a><a class="row sub" href="../course-design/lab-quiz-redesign.html"><span class="t">Lab Quizzes</span></a><a class="row sub" href="../course-design/tool-evaluations.html"><span class="t">Tools I Tried</span></a></details><a class="row" href="../math-readiness/index.html"><span class="n">4</span><span class="t">Math Readiness Initiative</span></a><a class="row" href="../ai-integration/index.html"><span class="n">5</span><span class="t">AI Integration</span></a><details open><summary class="row"><span class="n">6</span><span class="t">Instructional Materials</span><span class="tri" aria-hidden="true"></span></summary><a class="row sub" href="../instructional-materials/sample-materials.html"><span class="t">Sample Materials</span></a><a class="row sub" href="../instructional-materials/v101-lab-manual-renewal.html"><span class="t">CHEM V101 Lab Manual Renewal Project</span></a><a class="row sub" href="../instructional-materials/v101-digital-ecosystem.html"><span class="t">CHEM V101 Experiment Video Reference Library</span></a><a class="row sub" href="../instructional-materials/v104-lab-demo-video-project.html"><span class="t">CHEM V104 Laboratory Demo Video Project</span></a><a class="row sub" href="../instructional-materials/v101-lecture-demonstration.html"><span class="t">CHEM V101 Lecture Demonstration — Limiting Reactant Visualization</span></a><a class="row sub" href="../instructional-materials/lab-safety-video.html"><span class="t">Lab Safety Video Project</span></a><a class="row sub here" href="../instructional-materials/v101-simulations.html"><span class="t">CHEM V101 Interactive Simulations</span></a></details><details><summary class="row"><span class="n">7</span><span class="t">Collaboration</span><span class="tri" aria-hidden="true"></span></summary><a class="row sub" href="../collaboration/informal-evaluation-and-mentorship.html"><span class="t">Informal Evaluation and Mentorship</span></a><a class="row sub" href="../collaboration/formal-peer-evaluation.html"><span class="t">Formal Peer Evaluation</span></a><a class="row sub" href="../collaboration/chemistry-faculty-introduction-board.html"><span class="t">Chemistry Faculty Introduction Board</span></a></details><details><summary class="row"><span class="n">8</span><span class="t">Professional Activities</span><span class="tri" aria-hidden="true"></span></summary><a class="row sub" href="../professional-activities/ztc-initiative.html"><span class="t">ZTC Initiative — CHEM V101</span></a><a class="row sub" href="../professional-activities/deag.html"><span class="t">Distance Education Advisory Group (DEAG)</span></a><a class="row sub" href="../professional-activities/as-chemistry-program-collaboration.html"><span class="t">A.S. in Chemistry Program Collaboration</span></a><a class="row sub" href="../professional-activities/project-sail.html"><span class="t">Project S:AIL</span></a><a class="row sub" href="../professional-activities/professional-development.html"><span class="t">Professional Development</span></a><a class="row sub" href="../professional-activities/humanizing-online-stem-academy.html"><span class="t">Humanizing Online STEM Academy</span></a><a class="row sub" href="../professional-activities/cert-training.html"><span class="t">CERT — Community Emergency Response Team Training</span></a></details><details><summary class="row"><span class="n">9</span><span class="t">Looking Ahead</span><span class="tri" aria-hidden="true"></span></summary><a class="row sub" href="../looking-ahead/improvement-plan.html"><span class="t">Improvement Plan</span></a><a class="row sub" href="../looking-ahead/fourth-year-reflection.html"><span class="t">Fourth-Year Reflection</span></a></details>
+</nav>
+<div id="flash" aria-hidden="true"></div>
+<main class="screen" id="screen">
+  <article class="page">
+    <header class="chapter">
+      <p class="orn" aria-hidden="true">§</p>
+      <h1>CHEM V101 Interactive Simulations</h1>
+      
+    </header>
+    <div class="prose">
+<h2>Overview</h2>
+<p>A library of interactive simulations for CHEM V101, thirty-five as of September 2026, published in
+the course&#39;s Canvas modules. Each simulation is a single HTML file. A student clicks a link in a
+module and it runs in the browser, with nothing to install and no account to create. The way they
+were built is described on the <em>AI Integration</em> page.</p>
+<figure class="fig"><img src="../assets/content/simulations/three-simulations.png" alt="" loading="lazy" decoding="async" data-eink><figcaption>Three of the simulations as a student first sees them: Limiting Reactant with two reactant columns and the smaller product amount chosen, Mole Map with grams of AgNO₃ given and grams of AgCl to solve for, and the start screen of the Naming Speed Run.</figcaption></figure>
+<h2>Goals</h2>
+<ol>
+<li><p><strong>Show on screen what I used to explain in words.</strong> In lecture I explain a lot through
+analogies. For electronegativity, I describe a crowd on a street drifting toward the more famous
+person. The <em>Electronegativity difference</em> simulation shows that analogy on screen. A student
+picks two elements, and the electron cloud slides toward the more electronegative atom.</p>
+<figure class="fig live"><iframe src="../assets/content/simulations/live/ch10_en_difference.html" title="Interactive simulation" onload="try{var f=this,w=f.contentWindow,d=f.contentDocument,fit=function(){f.style.height=(d.documentElement.scrollHeight+2)+'px'};fit();['click','input','change'].forEach(function(t){d.addEventListener(t,function(){setTimeout(fit,60)})});w.addEventListener('resize',fit)}catch(e){}"></iframe><figcaption>The Electronegativity Difference simulation with H and Cl selected: the difference of 0.9 falls in the polar covalent band, and the shared electron cloud carries δ+ on H and δ− on Cl.</figcaption></figure>
+<p>The limiting-reactant simulation carries the same idea as the flasks and balloons on the
+<em>CHEM V101 Lecture Demonstration</em> page, with the balloons replaced by two bars that drain at the rate the
+coefficients set.</p>
+</li>
+<li><p><strong>Give students in the hybrid section more to do in Canvas.</strong> Most of a Canvas course is pages to
+read and files to upload. The naming speed game, for example, is a timed round of ten compounds
+that a student can play alone at home.</p>
+</li>
+</ol>
+<h2>Content from my lectures</h2>
+<p><strong>Examples I use in class.</strong> Students can work through the same examples they saw on my slides and
+in my lecture notes.</p>
+<ul>
+<li><em>Balancing by counting</em> uses the equations from my slides. The coefficients move, the subscripts
+stay locked, and a table counts the atoms on each side.</li>
+<li><em>Unit conversion chain</em> reproduces the worked examples from my notes.</li>
+<li><em>Dilution</em> reproduces the problems from my notes.</li>
+</ul>
+<p><strong>Points I return to in class.</strong> My lectures are recorded, and the record of three runs of this
+course shows which points I make every term.</p>
+<ul>
+<li><em>X in the denominator</em> covers solving for a variable in the denominator, which comes up in
+density, molar mass and the gas laws.</li>
+<li><em>Calculator keystrokes</em> covers entering scientific notation with parentheses or the EE key.</li>
+<li><em>Mole ratio is not mass ratio</em> covers converting grams to moles before applying the ratio.</li>
+</ul>
+<p>Every number in the simulations was checked against my lecture notes.</p>
+<h2>Use in Canvas</h2>
+<p>Each simulation opens on the module page, next to the material it belongs to. A student enters a
+value, moves a slider or drags a piece, and the screen responds. When a step is wrong, the
+simulation refuses it and shows the reason.</p>
+<h2>Sharing</h2>
+<p>When an instructor copies the Canvas page into another course, the simulation comes with it and
+works there. Any instructor who wants one can take it.</p>
+<h2>Status</h2>
+<p>All thirty-five are published in the course modules. I have asked students to tell me which
+simulations they would like, and I add new ones for lecture and lab as ideas come up.</p>
+<h2>Full list</h2>
+<div class="table-wrap"><table class="ruled"><thead><tr><th>Chapter</th><th>Simulations</th><th>Students practice</th></tr></thead><tbody><tr><td>1 &amp; 3</td><td>Energy and properties</td><td>Telling endothermic from exothermic by choosing the system; intensive and extensive properties; comparing specific heats</td></tr><tr><td>2</td><td>Measurement bench (Exp 2) · significant figures · scientific notation · unit conversion chain</td><td>Reading a ruler and a graduated cylinder to the estimated digit; counting and rounding significant figures; moving the decimal point; cancelling units through a chain of conversion factors</td></tr><tr><td>4</td><td>A/Z notation · average atomic mass</td><td>Getting protons, neutrons and electrons from an isotope symbol; calculating a weighted average from isotope abundances</td></tr><tr><td>5</td><td>Naming builder · naming speed game</td><td>Naming ionic compounds, molecular compounds and acids, and writing formulas from names</td></tr><tr><td>6</td><td>Mole bridge · empirical formula</td><td>Converting among grams, moles and particles; finding empirical and molecular formulas from percent composition</td></tr><tr><td>7</td><td>Balancing by counting · the H–OH trick · odd-oxygen combustion · double replacement by charge</td><td>Balancing by changing coefficients only; keeping a polyatomic ion together as one unit; writing double-replacement products from ion charges</td></tr><tr><td>8</td><td>Mole map · limiting reactant · mole ratio is not mass ratio</td><td>Planning a stoichiometry route from the given to the unknown; finding the limiting reactant, theoretical yield and percent yield</td></tr><tr><td>9</td><td>Light as a wave · seating the electrons · why the periodic trends go that way</td><td>Relating wavelength, frequency and energy; writing electron configurations; explaining periodic trends from protons and shells</td></tr><tr><td>10</td><td>Electronegativity difference · Lewis dot budget · VSEPR · polarity and dipole</td><td>Classifying a bond from the electronegativity difference; drawing Lewis structures from the valence electron count; naming molecular shapes; deciding whether a molecule is polar</td></tr><tr><td>11</td><td>Gas laws · ideal vs real gas · gas stoichiometry</td><td>Choosing between the two gas equations; identifying the conditions where a real gas departs from ideal; stoichiometry with PV = nRT</td></tr><tr><td>12</td><td>Phase diagram · heating curve and intermolecular forces</td><td>Reading a phase diagram; calculating heat along a heating curve; ranking intermolecular forces</td></tr><tr><td>13</td><td>Dilution</td><td>Dilution calculations with the moles of solute held constant</td></tr><tr><td>14</td><td>pH slider</td><td>Relating pH, pOH, [H⁺] and [OH⁻]</td></tr><tr><td>Lab</td><td>Paper chromatography (Exp 11)</td><td>Measuring R_f and matching an unknown to the standards</td></tr><tr><td>Across chapters</td><td>X in the denominator (2 · 6 · 11) · calculator keystrokes (6 · 9 · 11)</td><td>Solving for a variable in the denominator; entering scientific notation on the calculator</td></tr></tbody></table></div>
+
+    </div>
+    <nav class="pager" aria-label="Previous and next">
+    <a class="prev" href="lab-safety-video.html"><span class="k">‹ Previous</span><span class="t">Lab Safety Video Project</span></a>
+    <a class="next" href="../collaboration/index.html"><span class="k">Next ›</span><span class="t">Collaboration</span></a>
+  </nav>
+  </article>
+</main><footer class="loc"><span class="l">Instructional Materials · 7 of 7</span><span class="r" id="loc-pct">0%</span></footer><script src="../assets/site.js"></script>
+</body>
+</html>
