@@ -4,6 +4,7 @@
   var screen = document.getElementById('screen');
   var KEYS = ['page','face','size','lead','width','align'];
   var DEF = {page:'grey', face:'serif', size:'3', lead:'normal', width:'medium', align:'justify'};
+  if (matchMedia('(max-width:40rem)').matches) DEF.align = 'left';  /* matches site.css */
   function get(k){ return root.getAttribute('data-'+k) || DEF[k]; }
   function set(k, v){
     root.setAttribute('data-'+k, v);

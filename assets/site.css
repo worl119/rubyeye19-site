@@ -12,11 +12,11 @@
 :root, :root[data-page="grey"]{
   --page:#e3e3df; --page-2:#d8d8d3; --ink:#17171a; --ink-2:#4a4a4c; --ink-3:#7a7a7c;
   --rule:#a9a9a5; --rule-2:#c6c6c1; --sel:#17171a; --sel-ink:#e3e3df;
-  --grain-op:.07;
+  --grain-op:.07; --link:#b8922e; --link-bg:rgba(201,160,50,.18);
 }
-:root[data-page="white"]{ --page:#f8f8f6; --page-2:#ececea; --ink:#141416; --ink-2:#48484a; --ink-3:#7c7c7e; --rule:#b4b4b0; --rule-2:#d4d4d0; --sel:#141416; --sel-ink:#f8f8f6; --grain-op:.055; }
-:root[data-page="sepia"]{ --page:#eee4d0; --page-2:#e2d6bf; --ink:#2b2418; --ink-2:#5c523f; --ink-3:#8a7f69; --rule:#b8ab90; --rule-2:#d3c8b0; --sel:#2b2418; --sel-ink:#eee4d0; --grain-op:.07; }
-:root[data-page="dark"]{ --page:#161617; --page-2:#222224; --ink:#d9d9d5; --ink-2:#a3a3a0; --ink-3:#6f6f6d; --rule:#454546; --rule-2:#333335; --sel:#d9d9d5; --sel-ink:#161617; --grain-op:.06; }
+:root[data-page="white"]{ --page:#f8f8f6; --page-2:#ececea; --ink:#141416; --ink-2:#48484a; --ink-3:#7c7c7e; --rule:#b4b4b0; --rule-2:#d4d4d0; --sel:#141416; --sel-ink:#f8f8f6; --grain-op:.055; --link:#c09a33; --link-bg:rgba(214,172,56,.16); }
+:root[data-page="sepia"]{ --page:#eee4d0; --page-2:#e2d6bf; --ink:#2b2418; --ink-2:#5c523f; --ink-3:#8a7f69; --rule:#b8ab90; --rule-2:#d3c8b0; --sel:#2b2418; --sel-ink:#eee4d0; --grain-op:.07; --link:#a67c1c; --link-bg:rgba(170,125,30,.15); }
+:root[data-page="dark"]{ --page:#161617; --page-2:#222224; --ink:#d9d9d5; --ink-2:#a3a3a0; --ink-3:#6f6f6d; --rule:#454546; --rule-2:#333335; --sel:#d9d9d5; --sel-ink:#161617; --grain-op:.06; --link:#a88a3e; --link-bg:rgba(190,155,60,.16); }
 
 :root{
   --serif:"Literata",Georgia,"Times New Roman",serif;
@@ -105,6 +105,9 @@ a{color:inherit}
 /* ============ prose — book setting: indent, no gaps ============ */
 .prose{text-align:justify;hyphens:auto;-webkit-hyphens:auto;hyphenate-limit-chars:6 3 3}
 .prose p{text-wrap:pretty}
+/* a phone line holds too few words to justify cleanly, so narrow screens start left-aligned
+   (Howard, 2026-10-19); choosing Justify in Aa still applies */
+@media (max-width:40rem){ :root:not([data-align="justify"]) .prose{text-align:left;hyphens:manual} }
 :root[data-align="left"] .prose{text-align:left;hyphens:manual}
 .prose p{margin:0}
 .prose p + p{text-indent:1.5em}
@@ -120,7 +123,10 @@ a{color:inherit}
 .prose blockquote p + p{text-indent:0;margin-top:.5em}
 .prose hr{border:0;text-align:center;margin:1.8em 0;height:auto}
 .prose hr::after{content:"⁂";color:var(--ink-3);font-size:1em}
-.prose a{text-decoration-thickness:1px;text-underline-offset:.16em;text-decoration-color:var(--ink-3)}
+/* links keep the ink colour and carry a muted ochre underline — visible as links without the web's
+   blue (Howard, 2026-10-19) */
+.prose a{text-decoration-thickness:.1em;text-underline-offset:.2em;text-decoration-color:var(--link)}
+.prose a:not(:has(img)):hover{background:var(--link-bg);text-decoration-color:var(--ink-2)}
 .prose strong{font-weight:600}
 .prose em{font-style:italic}
 .prose code{font-family:ui-monospace,Menlo,monospace;font-size:.86em;background:var(--page-2);padding:.05em .3em}
