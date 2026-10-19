@@ -19,9 +19,8 @@
     if (dn) dn.textContent = get('page') === 'dark' ? 'Day' : 'Night';
   }
 
-  /* ---- the e-ink refresh: a real panel inverts for an instant on a full redraw ---- */
-  var flash = document.getElementById('flash');
-  function refresh(){ if (!flash) return; flash.classList.remove('go'); void flash.offsetWidth; flash.classList.add('go'); }
+  /* The inverted flash between pages is gone (Howard, 2026-10-18: "번쩍이는건 빼자"). A page turn
+     now lets the text fade out and the next page's text fade in, in a few grey steps (site.css). */
   var reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
 
   /* ---- day / night: dark ↔ the last light page colour ---- */
@@ -31,7 +30,6 @@
     var back = 'grey'; try{ back = localStorage.getItem('rd-light') || 'grey'; }catch(e){}
     if (cur === 'dark'){ set('page', back); }
     else { try{ localStorage.setItem('rd-light', cur); }catch(e){} set('page', 'dark'); }
-    refresh();
   });
 
   /* ---- settings ---- */
@@ -39,11 +37,11 @@
     g.addEventListener('click', function(e){
       var b = e.target.closest('button'); if (!b) return;
       set(g.dataset.var, b.dataset.v);
-      if (g.dataset.var === 'page'){ if (b.dataset.v !== 'dark'){ try{ localStorage.setItem('rd-light', b.dataset.v); }catch(e){} } refresh(); }
+      if (g.dataset.var === 'page'){ if (b.dataset.v !== 'dark'){ try{ localStorage.setItem('rd-light', b.dataset.v); }catch(e){} } }
     });
   });
   var reset = document.getElementById('aa-reset');
-  if (reset) reset.addEventListener('click', function(){ KEYS.forEach(function(k){ set(k, DEF[k]); }); refresh(); });
+  if (reset) reset.addEventListener('click', function(){ KEYS.forEach(function(k){ set(k, DEF[k]); }); });
   document.querySelectorAll('.tabs [data-tab]').forEach(function(t){
     t.addEventListener('click', function(){
       document.querySelectorAll('.tabs [data-tab]').forEach(function(x){ x.setAttribute('aria-selected', String(x === t)); });
@@ -84,17 +82,19 @@
   }
   if (screen){ screen.addEventListener('scroll', tick, {passive:true}); addEventListener('resize', tick); tick(); }
 
-  /* ---- page turn: a full refresh before the next page draws ---- */
+  /* ---- page turn: the text fades out before the next page draws ---- */
   document.addEventListener('click', function(e){
     var a = e.target.closest('a[href]'); if (!a) return;
     if (a.target === '_blank' || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
     var url = new URL(a.href, location.href);
     if (url.origin !== location.origin || url.pathname === location.pathname) return;
-    if (reduced || !flash) return;
+    if (reduced) return;
     e.preventDefault();
-    refresh();
-    setTimeout(function(){ location.href = a.href; }, 200);
+    root.classList.add('leaving');
+    setTimeout(function(){ location.href = a.href; }, 170);
   });
+  /* Back/Forward can restore this page from memory with the text still faded out */
+  addEventListener('pageshow', function(){ root.classList.remove('leaving'); });
 
   /* ---- images: pushed to 16 grey levels, as an e-ink panel would draw them ---- */
   document.querySelectorAll('img[data-eink]').forEach(function(img){
@@ -127,9 +127,9 @@
     var fig = img.closest('figure'), cap = fig && fig.querySelector('figcaption');
     boxImg.src = img.dataset.color || img.src; boxImg.alt = img.alt || '';
     boxCap.textContent = cap ? cap.textContent : ''; boxCap.hidden = !boxCap.textContent;
-    refresh(); box.hidden = false; document.body.classList.add('boxed'); box.querySelector('.x').focus();
+    box.hidden = false; document.body.classList.add('boxed'); box.querySelector('.x').focus();
   }
-  function closeBox(){ if (box.hidden) return; box.hidden = true; document.body.classList.remove('boxed'); refresh(); }
+  function closeBox(){ if (box.hidden) return; box.hidden = true; document.body.classList.remove('boxed'); }
   document.addEventListener('click', function(e){
     var img = e.target.closest('.prose img'); if (!img || !img.dataset.color) return;
     e.preventDefault(); openBox(img);
