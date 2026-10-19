@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Teaching Materials Database · Howard Han · Tenure Portfolio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Literata:ital,opsz,wght@0,7..72,300..700;1,7..72,300..700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/site.css?v=6f561c2b40">
+<script>(function(){try{var r=document.documentElement,p=localStorage.getItem('rd-page');r.setAttribute('data-page',p||'grey');['face','size','lead','width','align'].forEach(function(k){var v=localStorage.getItem('rd-'+k);if(v)r.setAttribute('data-'+k,v);});}catch(e){document.documentElement.setAttribute('data-page','grey');}})();</script>
+</head>
+<body>
+<header class="status">
+  <div class="left">
+    <a class="ic back" href="index.html" aria-label="Back">‹</a>
+    <button type="button" class="ic" id="goto-btn" aria-expanded="false" aria-controls="goto" aria-label="Go to">☰</button>
+    <a class="name" href="../index.html">Howard Han</a>
+  </div>
+  <div class="right">
+    <span class="prog" aria-hidden="true"><i></i></span><span id="pct" class="pct">0%</span>
+    <button type="button" class="tx" id="daynight" aria-label="Day or night">Night</button>
+    <span class="aa"><button type="button" class="tx aa-btn" id="aa-btn" aria-expanded="false" aria-controls="aa-panel" aria-label="Font and layout">Aa</button><div class="panel" id="aa-panel" hidden>
+  <div class="tabs" role="tablist">
+    <button type="button" role="tab" aria-selected="true" data-tab="font">Font</button>
+    <button type="button" role="tab" aria-selected="false" data-tab="layout">Layout</button>
+  </div>
+  <div class="tab" data-tab="font">
+    <div class="opt"><span class="lbl">Typeface</span><span class="seg" data-var="face"><button type="button" data-v="serif" aria-pressed="false">Literata</button><button type="button" data-v="sans" aria-pressed="false">Inter</button></span></div>
+    <div class="opt"><span class="lbl">Size</span><span class="seg" data-var="size"><button type="button" data-v="1" aria-pressed="false">A</button><button type="button" data-v="2" aria-pressed="false">A</button><button type="button" data-v="3" aria-pressed="false">A</button><button type="button" data-v="4" aria-pressed="false">A</button><button type="button" data-v="5" aria-pressed="false">A</button></span></div>
+    <div class="opt"><span class="lbl">Line spacing</span><span class="seg" data-var="lead"><button type="button" data-v="tight" aria-pressed="false">Tight</button><button type="button" data-v="normal" aria-pressed="false">Normal</button><button type="button" data-v="loose" aria-pressed="false">Loose</button></span></div>
+  </div>
+  <div class="tab" data-tab="layout" hidden>
+    <div class="opt"><span class="lbl">Page color</span><span class="swatches" data-var="page"><button type="button" class="swatch sw-grey" data-v="grey" aria-label="Grey" aria-pressed="false"></button><button type="button" class="swatch sw-white" data-v="white" aria-label="White" aria-pressed="false"></button><button type="button" class="swatch sw-sepia" data-v="sepia" aria-label="Sepia" aria-pressed="false"></button><button type="button" class="swatch sw-dark" data-v="dark" aria-label="Dark" aria-pressed="false"></button></span></div>
+    <div class="opt"><span class="lbl">Alignment</span><span class="seg" data-var="align"><button type="button" data-v="justify" aria-pressed="false">Justified</button><button type="button" data-v="left" aria-pressed="false">Left</button></span></div>
+    <div class="opt"><span class="lbl">Page width</span><span class="seg" data-var="width"><button type="button" data-v="narrow" aria-pressed="false">Narrow</button><button type="button" data-v="medium" aria-pressed="false">Medium</button><button type="button" data-v="wide" aria-pressed="false">Wide</button></span></div>
+  </div>
+  <button type="button" class="reset" id="aa-reset">Reset to defaults</button>
+</div></span>
+  </div>
+</header>
+<nav class="goto" id="goto" hidden aria-label="Go to">
+  <div class="goto-head"><span>Go To</span><button type="button" class="x" id="goto-close" aria-label="Close">×</button></div>
+  <div class="find"><input type="search" id="find" placeholder="Search this portfolio" aria-label="Search this portfolio" autocomplete="off" spellcheck="false" data-index="../assets/search.json?v=e7a494ea90"><p class="find-n" id="find-n" aria-live="polite"></p></div>
+  <div id="hits"></div>
+  <div id="toc">
+  <a class="row" href="../index.html"><span class="t">Cover</span></a>
+  <details><summary class="row"><span class="n">1</span><span class="t">Overview</span><span class="tri" aria-hidden="true"></span></summary><a class="row sub" href="../overview/cover-letter.html"><span class="t">Cover Letter</span></a><a class="row sub" href="../overview/curriculum-vitae.html"><span class="t">Curriculum Vitae</span></a><a class="row sub" href="../overview/tenure-year-4-parameters.html"><span class="t">Tenure Year 4 Parameters</span></a><a class="row sub" href="../overview/timeline-of-meetings.html"><span class="t">Timeline of Meetings</span></a></details><details><summary class="row"><span class="n">2</span><span class="t">Teaching Insights</span><span class="tri" aria-hidden="true"></span></summary><a class="row sub" href="../teaching-insights/teaching-philosophy.html"><span class="t">Teaching Philosophy</span></a><a class="row sub" href="../teaching-insights/student-evaluations.html"><span class="t">Student Evaluations</span></a><a class="row sub" href="../teaching-insights/committee-observation-feedback.html"><span class="t">Committee Observation Feedback</span></a><a class="row sub" href="../teaching-insights/self-appraisal.html"><span class="t">Self Appraisal</span></a></details><details><summary class="row"><span class="n">3</span><span class="t">Course Design</span><span class="tri" aria-hidden="true"></span></summary><a class="row sub" href="../course-design/linked-lecture-lab.html"><span class="t">Linked Lecture–Lab Coordination</span></a><a class="row sub" href="../course-design/lab-quiz-redesign.html"><span class="t">Lab Quizzes</span></a><a class="row sub" href="../course-design/tool-evaluations.html"><span class="t">Tools I Tried</span></a></details><a class="row" href="../math-readiness/index.html"><span class="n">4</span><span class="t">Math Readiness Initiative</span></a><details open><summary class="row"><span class="n">5</span><span class="t">AI Integration</span><span class="tri" aria-hidden="true"></span></summary><a class="row sub" href="../ai-integration/getting-started.html"><span class="t">Getting Started with AI</span></a><a class="row sub here" href="../ai-integration/teaching-materials-database.html"><span class="t">Teaching Materials Database</span></a><a class="row sub" href="../ai-integration/connecting-ai-to-canvas.html"><span class="t">Connecting AI to Canvas</span></a><a class="row sub" href="../ai-integration/tools-for-students-and-lecture.html"><span class="t">Tools for Students and Lecture</span></a></details><details><summary class="row"><span class="n">6</span><span class="t">Instructional Materials</span><span class="tri" aria-hidden="true"></span></summary><a class="row sub" href="../instructional-materials/sample-materials.html"><span class="t">Sample Materials</span></a><a class="row sub" href="../instructional-materials/v101-lab-manual-renewal.html"><span class="t">CHEM V101 Lab Manual Renewal Project</span></a><a class="row sub" href="../instructional-materials/v101-digital-ecosystem.html"><span class="t">CHEM V101 Experiment Video Reference Library</span></a><a class="row sub" href="../instructional-materials/v104-lab-demo-video-project.html"><span class="t">CHEM V104 Laboratory Demo Video Project</span></a><a class="row sub" href="../instructional-materials/v101-lecture-demonstration.html"><span class="t">CHEM V101 Lecture Demonstration — Limiting Reactant Visualization</span></a><a class="row sub" href="../instructional-materials/lab-safety-video.html"><span class="t">Lab Safety Video Project</span></a><a class="row sub" href="../instructional-materials/v101-simulations.html"><span class="t">CHEM V101 Interactive Simulations</span></a></details><details><summary class="row"><span class="n">7</span><span class="t">Collaboration</span><span class="tri" aria-hidden="true"></span></summary><a class="row sub" href="../collaboration/informal-evaluation-and-mentorship.html"><span class="t">Informal Evaluation and Mentorship</span></a><a class="row sub" href="../collaboration/formal-peer-evaluation.html"><span class="t">Formal Peer Evaluation</span></a><a class="row sub" href="../collaboration/chemistry-faculty-introduction-board.html"><span class="t">Chemistry Faculty Introduction Board</span></a></details><details><summary class="row"><span class="n">8</span><span class="t">Professional Activities</span><span class="tri" aria-hidden="true"></span></summary><a class="row sub" href="../professional-activities/ztc-initiative.html"><span class="t">ZTC Initiative — CHEM V101</span></a><a class="row sub" href="../professional-activities/deag.html"><span class="t">Distance Education Advisory Group (DEAG)</span></a><a class="row sub" href="../professional-activities/as-chemistry-program-collaboration.html"><span class="t">A.S. in Chemistry Program Collaboration</span></a><a class="row sub" href="../professional-activities/project-sail.html"><span class="t">Project S:AIL</span></a><a class="row sub" href="../professional-activities/professional-development.html"><span class="t">Professional Development</span></a><a class="row sub" href="../professional-activities/humanizing-online-stem-academy.html"><span class="t">Humanizing Online STEM Academy</span></a><a class="row sub" href="../professional-activities/cert-training.html"><span class="t">CERT — Community Emergency Response Team Training</span></a></details><details><summary class="row"><span class="n">9</span><span class="t">Looking Ahead</span><span class="tri" aria-hidden="true"></span></summary><a class="row sub" href="../looking-ahead/improvement-plan.html"><span class="t">Improvement Plan</span></a><a class="row sub" href="../looking-ahead/fourth-year-reflection.html"><span class="t">Fourth-Year Reflection</span></a></details>
+  </div>
+</nav><nav class="side" aria-label="Contents"><ol><li><a class="s" href="../overview/index.html"><span class="n">1</span>Overview</a></li><li><a class="s" href="../teaching-insights/index.html"><span class="n">2</span>Teaching Insights</a></li><li><a class="s" href="../course-design/index.html"><span class="n">3</span>Course Design</a></li><li><a class="s" href="../math-readiness/index.html"><span class="n">4</span>Math Readiness Initiative</a></li><li><a class="s here" href="../ai-integration/index.html"><span class="n">5</span>AI Integration</a><ul><li><a class="p" href="../ai-integration/getting-started.html">Getting Started with AI</a></li><li><a class="p here" href="../ai-integration/teaching-materials-database.html" aria-current="page">Teaching Materials Database</a></li><li><a class="p" href="../ai-integration/connecting-ai-to-canvas.html">Connecting AI to Canvas</a></li><li><a class="p" href="../ai-integration/tools-for-students-and-lecture.html">Tools for Students and Lecture</a></li></ul></li><li><a class="s" href="../instructional-materials/index.html"><span class="n">6</span>Instructional Materials</a></li><li><a class="s" href="../collaboration/index.html"><span class="n">7</span>Collaboration</a></li><li><a class="s" href="../professional-activities/index.html"><span class="n">8</span>Professional Activities</a></li><li><a class="s" href="../looking-ahead/index.html"><span class="n">9</span>Looking Ahead</a></li></ol></nav>
+<main class="screen" id="screen">
+  <article class="page">
+    <header class="chapter">
+      <p class="orn" aria-hidden="true">§</p>
+      <h1>Teaching Materials Database</h1>
+      
+    </header>
+    <div class="prose">
+<p>Claude Code opens inside a folder on my computer. Each folder holds one kind of work along with
+everything that has been written down about it, and the agent reads those files before it does
+anything. Dividing the information this way lets each agent concentrate on its own role, working only
+from what it has been given. My college folder and my personal folder may both hold a schedule, for
+example, but the two schedules are about different things, and neither agent should confuse one with
+the other. I keep more than ten of these folders: some for the college, some personal, and some that
+exist for a single job, such as one piece of software.</p>
+<h2>Course materials, lecture transcripts and lab notes</h2>
+<p>One of these folders holds my teaching materials, built as a database. An agent read through my
+slides and wrote their content out as text files, organized by chapter and topic. It also linked the
+transcripts Zoom makes of my lecture recordings to the matching slides, so for any topic I can see both what
+the slides say and how I taught it in class. The folder holds my lab materials and the
+documents I have written for the college as well. During CHEM V120B last summer I sent field notes to
+it from the lab bench through the phone bot described above. Each recorded what went wrong with a
+procedure and what to change next time, written within minutes of seeing it. The lab technician&#39;s preparation
+emails and photos are there too, filed by course and by experiment in date order, so before a lab I
+can see how that experiment has been set up in past years. This semester the full-term section runs
+ahead of the late-start one, so after a full-term lecture an agent reads the Zoom transcript against my
+plan and drafts what to change when I teach that chapter to the late-start section.</p>
+<p>As the material grows, reading through all of it for every question stops working. An agent also
+analyzes new material as it comes in, so comparisons across semesters are ready when I need them, as
+with the list below.</p>
+<h2>Recurring student difficulties</h2>
+<p>I have taught CHEM V101 three times with recordings. The notes built from the Zoom transcripts of those
+three semesters list, chapter by chapter, the places where students got stuck, each tagged with how
+many of the three semesters it came up in. A place that came up once may come from something that
+happened that day. A place that came up in all three comes from the material itself, and students will
+likely get stuck there again. I read this list the evening before I teach a chapter, and it decided
+which of the simulations described below were built first.</p>
+
+    </div>
+    <nav class="pager" aria-label="Previous and next">
+    <a class="prev" href="getting-started.html"><span class="k">‹ Previous</span><span class="t">Getting Started with AI</span></a>
+    <a class="next" href="connecting-ai-to-canvas.html"><span class="k">Next ›</span><span class="t">Connecting AI to Canvas</span></a>
+  </nav>
+  </article>
+</main><footer class="loc"><span class="l">AI Integration · 2 of 4</span><span class="r" id="loc-pct">0%</span></footer><script src="../assets/site.js?v=6f561c2b40"></script>
+</body>
+</html>

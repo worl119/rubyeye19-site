@@ -8,7 +8,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Literata:ital,opsz,wght@0,7..72,300..700;1,7..72,300..700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../assets/site.css?v=4ab4707e24">
+<link rel="stylesheet" href="../assets/site.css?v=6f561c2b40">
 <script>(function(){try{var r=document.documentElement,p=localStorage.getItem('rd-page');r.setAttribute('data-page',p||'grey');['face','size','lead','width','align'].forEach(function(k){var v=localStorage.getItem('rd-'+k);if(v)r.setAttribute('data-'+k,v);});}catch(e){document.documentElement.setAttribute('data-page','grey');}})();</script>
 </head>
 <body>
@@ -42,244 +42,25 @@
 </header>
 <nav class="goto" id="goto" hidden aria-label="Go to">
   <div class="goto-head"><span>Go To</span><button type="button" class="x" id="goto-close" aria-label="Close">×</button></div>
+  <div class="find"><input type="search" id="find" placeholder="Search this portfolio" aria-label="Search this portfolio" autocomplete="off" spellcheck="false" data-index="../assets/search.json?v=e7a494ea90"><p class="find-n" id="find-n" aria-live="polite"></p></div>
+  <div id="hits"></div>
+  <div id="toc">
   <a class="row" href="../index.html"><span class="t">Cover</span></a>
-  <details><summary class="row"><span class="n">1</span><span class="t">Overview</span><span class="tri" aria-hidden="true"></span></summary><a class="row sub" href="../overview/cover-letter.html"><span class="t">Cover Letter</span></a><a class="row sub" href="../overview/curriculum-vitae.html"><span class="t">Curriculum Vitae</span></a><a class="row sub" href="../overview/tenure-year-4-parameters.html"><span class="t">Tenure Year 4 Parameters</span></a><a class="row sub" href="../overview/timeline-of-meetings.html"><span class="t">Timeline of Meetings</span></a></details><details><summary class="row"><span class="n">2</span><span class="t">Teaching Insights</span><span class="tri" aria-hidden="true"></span></summary><a class="row sub" href="../teaching-insights/teaching-philosophy.html"><span class="t">Teaching Philosophy</span></a><a class="row sub" href="../teaching-insights/student-evaluations.html"><span class="t">Student Evaluations</span></a><a class="row sub" href="../teaching-insights/committee-observation-feedback.html"><span class="t">Committee Observation Feedback</span></a><a class="row sub" href="../teaching-insights/self-appraisal.html"><span class="t">Self Appraisal</span></a></details><details><summary class="row"><span class="n">3</span><span class="t">Course Design</span><span class="tri" aria-hidden="true"></span></summary><a class="row sub" href="../course-design/linked-lecture-lab.html"><span class="t">Linked Lecture–Lab Coordination</span></a><a class="row sub" href="../course-design/lab-quiz-redesign.html"><span class="t">Lab Quizzes</span></a><a class="row sub" href="../course-design/tool-evaluations.html"><span class="t">Tools I Tried</span></a></details><a class="row" href="../math-readiness/index.html"><span class="n">4</span><span class="t">Math Readiness Initiative</span></a><a class="row here" href="../ai-integration/index.html"><span class="n">5</span><span class="t">AI Integration</span></a><details><summary class="row"><span class="n">6</span><span class="t">Instructional Materials</span><span class="tri" aria-hidden="true"></span></summary><a class="row sub" href="../instructional-materials/sample-materials.html"><span class="t">Sample Materials</span></a><a class="row sub" href="../instructional-materials/v101-lab-manual-renewal.html"><span class="t">CHEM V101 Lab Manual Renewal Project</span></a><a class="row sub" href="../instructional-materials/v101-digital-ecosystem.html"><span class="t">CHEM V101 Experiment Video Reference Library</span></a><a class="row sub" href="../instructional-materials/v104-lab-demo-video-project.html"><span class="t">CHEM V104 Laboratory Demo Video Project</span></a><a class="row sub" href="../instructional-materials/v101-lecture-demonstration.html"><span class="t">CHEM V101 Lecture Demonstration — Limiting Reactant Visualization</span></a><a class="row sub" href="../instructional-materials/lab-safety-video.html"><span class="t">Lab Safety Video Project</span></a><a class="row sub" href="../instructional-materials/v101-simulations.html"><span class="t">CHEM V101 Interactive Simulations</span></a></details><details><summary class="row"><span class="n">7</span><span class="t">Collaboration</span><span class="tri" aria-hidden="true"></span></summary><a class="row sub" href="../collaboration/informal-evaluation-and-mentorship.html"><span class="t">Informal Evaluation and Mentorship</span></a><a class="row sub" href="../collaboration/formal-peer-evaluation.html"><span class="t">Formal Peer Evaluation</span></a><a class="row sub" href="../collaboration/chemistry-faculty-introduction-board.html"><span class="t">Chemistry Faculty Introduction Board</span></a></details><details><summary class="row"><span class="n">8</span><span class="t">Professional Activities</span><span class="tri" aria-hidden="true"></span></summary><a class="row sub" href="../professional-activities/ztc-initiative.html"><span class="t">ZTC Initiative — CHEM V101</span></a><a class="row sub" href="../professional-activities/deag.html"><span class="t">Distance Education Advisory Group (DEAG)</span></a><a class="row sub" href="../professional-activities/as-chemistry-program-collaboration.html"><span class="t">A.S. in Chemistry Program Collaboration</span></a><a class="row sub" href="../professional-activities/project-sail.html"><span class="t">Project S:AIL</span></a><a class="row sub" href="../professional-activities/professional-development.html"><span class="t">Professional Development</span></a><a class="row sub" href="../professional-activities/humanizing-online-stem-academy.html"><span class="t">Humanizing Online STEM Academy</span></a><a class="row sub" href="../professional-activities/cert-training.html"><span class="t">CERT — Community Emergency Response Team Training</span></a></details><details><summary class="row"><span class="n">9</span><span class="t">Looking Ahead</span><span class="tri" aria-hidden="true"></span></summary><a class="row sub" href="../looking-ahead/improvement-plan.html"><span class="t">Improvement Plan</span></a><a class="row sub" href="../looking-ahead/fourth-year-reflection.html"><span class="t">Fourth-Year Reflection</span></a></details>
-</nav><nav class="side" aria-label="Contents"><ol><li><a class="s" href="../overview/index.html"><span class="n">1</span>Overview</a></li><li><a class="s" href="../teaching-insights/index.html"><span class="n">2</span>Teaching Insights</a></li><li><a class="s" href="../course-design/index.html"><span class="n">3</span>Course Design</a></li><li><a class="s" href="../math-readiness/index.html"><span class="n">4</span>Math Readiness Initiative</a></li><li><a class="s here" href="../ai-integration/index.html" aria-current="page"><span class="n">5</span>AI Integration</a></li><li><a class="s" href="../instructional-materials/index.html"><span class="n">6</span>Instructional Materials</a></li><li><a class="s" href="../collaboration/index.html"><span class="n">7</span>Collaboration</a></li><li><a class="s" href="../professional-activities/index.html"><span class="n">8</span>Professional Activities</a></li><li><a class="s" href="../looking-ahead/index.html"><span class="n">9</span>Looking Ahead</a></li></ol></nav>
+  <details><summary class="row"><span class="n">1</span><span class="t">Overview</span><span class="tri" aria-hidden="true"></span></summary><a class="row sub" href="../overview/cover-letter.html"><span class="t">Cover Letter</span></a><a class="row sub" href="../overview/curriculum-vitae.html"><span class="t">Curriculum Vitae</span></a><a class="row sub" href="../overview/tenure-year-4-parameters.html"><span class="t">Tenure Year 4 Parameters</span></a><a class="row sub" href="../overview/timeline-of-meetings.html"><span class="t">Timeline of Meetings</span></a></details><details><summary class="row"><span class="n">2</span><span class="t">Teaching Insights</span><span class="tri" aria-hidden="true"></span></summary><a class="row sub" href="../teaching-insights/teaching-philosophy.html"><span class="t">Teaching Philosophy</span></a><a class="row sub" href="../teaching-insights/student-evaluations.html"><span class="t">Student Evaluations</span></a><a class="row sub" href="../teaching-insights/committee-observation-feedback.html"><span class="t">Committee Observation Feedback</span></a><a class="row sub" href="../teaching-insights/self-appraisal.html"><span class="t">Self Appraisal</span></a></details><details><summary class="row"><span class="n">3</span><span class="t">Course Design</span><span class="tri" aria-hidden="true"></span></summary><a class="row sub" href="../course-design/linked-lecture-lab.html"><span class="t">Linked Lecture–Lab Coordination</span></a><a class="row sub" href="../course-design/lab-quiz-redesign.html"><span class="t">Lab Quizzes</span></a><a class="row sub" href="../course-design/tool-evaluations.html"><span class="t">Tools I Tried</span></a></details><a class="row" href="../math-readiness/index.html"><span class="n">4</span><span class="t">Math Readiness Initiative</span></a><details open><summary class="row"><span class="n">5</span><span class="t">AI Integration</span><span class="tri" aria-hidden="true"></span></summary><a class="row sub" href="../ai-integration/getting-started.html"><span class="t">Getting Started with AI</span></a><a class="row sub" href="../ai-integration/teaching-materials-database.html"><span class="t">Teaching Materials Database</span></a><a class="row sub" href="../ai-integration/connecting-ai-to-canvas.html"><span class="t">Connecting AI to Canvas</span></a><a class="row sub" href="../ai-integration/tools-for-students-and-lecture.html"><span class="t">Tools for Students and Lecture</span></a></details><details><summary class="row"><span class="n">6</span><span class="t">Instructional Materials</span><span class="tri" aria-hidden="true"></span></summary><a class="row sub" href="../instructional-materials/sample-materials.html"><span class="t">Sample Materials</span></a><a class="row sub" href="../instructional-materials/v101-lab-manual-renewal.html"><span class="t">CHEM V101 Lab Manual Renewal Project</span></a><a class="row sub" href="../instructional-materials/v101-digital-ecosystem.html"><span class="t">CHEM V101 Experiment Video Reference Library</span></a><a class="row sub" href="../instructional-materials/v104-lab-demo-video-project.html"><span class="t">CHEM V104 Laboratory Demo Video Project</span></a><a class="row sub" href="../instructional-materials/v101-lecture-demonstration.html"><span class="t">CHEM V101 Lecture Demonstration — Limiting Reactant Visualization</span></a><a class="row sub" href="../instructional-materials/lab-safety-video.html"><span class="t">Lab Safety Video Project</span></a><a class="row sub" href="../instructional-materials/v101-simulations.html"><span class="t">CHEM V101 Interactive Simulations</span></a></details><details><summary class="row"><span class="n">7</span><span class="t">Collaboration</span><span class="tri" aria-hidden="true"></span></summary><a class="row sub" href="../collaboration/informal-evaluation-and-mentorship.html"><span class="t">Informal Evaluation and Mentorship</span></a><a class="row sub" href="../collaboration/formal-peer-evaluation.html"><span class="t">Formal Peer Evaluation</span></a><a class="row sub" href="../collaboration/chemistry-faculty-introduction-board.html"><span class="t">Chemistry Faculty Introduction Board</span></a></details><details><summary class="row"><span class="n">8</span><span class="t">Professional Activities</span><span class="tri" aria-hidden="true"></span></summary><a class="row sub" href="../professional-activities/ztc-initiative.html"><span class="t">ZTC Initiative — CHEM V101</span></a><a class="row sub" href="../professional-activities/deag.html"><span class="t">Distance Education Advisory Group (DEAG)</span></a><a class="row sub" href="../professional-activities/as-chemistry-program-collaboration.html"><span class="t">A.S. in Chemistry Program Collaboration</span></a><a class="row sub" href="../professional-activities/project-sail.html"><span class="t">Project S:AIL</span></a><a class="row sub" href="../professional-activities/professional-development.html"><span class="t">Professional Development</span></a><a class="row sub" href="../professional-activities/humanizing-online-stem-academy.html"><span class="t">Humanizing Online STEM Academy</span></a><a class="row sub" href="../professional-activities/cert-training.html"><span class="t">CERT — Community Emergency Response Team Training</span></a></details><details><summary class="row"><span class="n">9</span><span class="t">Looking Ahead</span><span class="tri" aria-hidden="true"></span></summary><a class="row sub" href="../looking-ahead/improvement-plan.html"><span class="t">Improvement Plan</span></a><a class="row sub" href="../looking-ahead/fourth-year-reflection.html"><span class="t">Fourth-Year Reflection</span></a></details>
+  </div>
+</nav><nav class="side" aria-label="Contents"><ol><li><a class="s" href="../overview/index.html"><span class="n">1</span>Overview</a></li><li><a class="s" href="../teaching-insights/index.html"><span class="n">2</span>Teaching Insights</a></li><li><a class="s" href="../course-design/index.html"><span class="n">3</span>Course Design</a></li><li><a class="s" href="../math-readiness/index.html"><span class="n">4</span>Math Readiness Initiative</a></li><li><a class="s here" href="../ai-integration/index.html" aria-current="page"><span class="n">5</span>AI Integration</a><ul><li><a class="p" href="../ai-integration/getting-started.html">Getting Started with AI</a></li><li><a class="p" href="../ai-integration/teaching-materials-database.html">Teaching Materials Database</a></li><li><a class="p" href="../ai-integration/connecting-ai-to-canvas.html">Connecting AI to Canvas</a></li><li><a class="p" href="../ai-integration/tools-for-students-and-lecture.html">Tools for Students and Lecture</a></li></ul></li><li><a class="s" href="../instructional-materials/index.html"><span class="n">6</span>Instructional Materials</a></li><li><a class="s" href="../collaboration/index.html"><span class="n">7</span>Collaboration</a></li><li><a class="s" href="../professional-activities/index.html"><span class="n">8</span>Professional Activities</a></li><li><a class="s" href="../looking-ahead/index.html"><span class="n">9</span>Looking Ahead</a></li></ol></nav>
 <main class="screen" id="screen">
-  <article class="page">
-    <header class="chapter">
-      <p class="orn" aria-hidden="true">§</p>
-      <h1>AI Integration</h1>
-      
-    </header>
-    <div class="prose">
-<p>Over the past few years, AI has become one of the most talked-about topics at the college. Like
-everyone else, I was starting from scratch. In the beginning, &quot;using AI&quot; just meant typing questions
-into a chatbot. As new models appeared and the information around them grew, I kept trying new
-things. This page is a record of what I&#39;ve tried along the way.</p>
-<h2>Understanding different levels of AI use</h2>
-<p>Google DeepMind&#39;s AlphaFold predicts the three-dimensional structures of proteins, work that earned
-a share of the 2024 Nobel Prize in Chemistry. Meanwhile, my own use of AI during my first years here
-amounted to typing questions into a chat window. The gap between the two bothered me. But I wasn&#39;t
-going to become an AI engineer overnight, and I wanted to understand what the steps in between
-looked like.</p>
-<p>In April 2026, Michal Klacko of STRV published a framework that divides AI use into six levels:
-Skeptic, Tourist, Assisted Coder, Prompt-Driven Developer, AI-Native Engineer, and AI Architect. It
-was written with software developers in mind, and since I&#39;m not one, the categories didn&#39;t mean much
-to me at first. As I got to know these tools better, though, I found I could draw my own lines based
-on what the work involves:</p>
-<ul>
-<li><strong>Level 1 — Chatting.</strong> Asking questions in a chat window on an AI website.</li>
-<li><strong>Level 2 — Organizing work into projects.</strong> Instead of separate chats that each start from
-scratch, the conversations and files for a larger task live together, so every new chat already
-has the task&#39;s context.</li>
-<li><strong>Level 3 — Working on my own computer.</strong> AI runs as a desktop application with access to local
-files and programs, so it reads and edits the actual documents rather than me copying text in and
-out of a browser.</li>
-<li><strong>Level 4 — Building a personal knowledge system.</strong> Material is stored and organized
-systematically, in a form that both I and AI agents can find and use.</li>
-<li><strong>Level 5 — Connecting and automating.</strong> AI connects directly to websites and services, and I
-build tools that run on their own.</li>
-</ul>
-<p>My first three years stayed within the first two levels. Asking a chatbot questions is convenient,
-but a chat window has no systematic way to handle work, and my tasks were growing bigger and running
-longer. Moving into the third level
-and beyond, at the end of my third year, was a natural next step.</p>
-<h2>Moving the work out of the chat window</h2>
-<p>In early June 2026 I watched a YouTube video demonstrating Codex, an AI agent shown printing shipping
-labels through a Telegram bot, and watching an inbox, summarizing new emails, and drafting replies. I
-asked Claude whether Claude Code could do the same. A search showed that the video overstated what
-Codex does, and the conversation turned into a different question: how would an ordinary user like
-me use this kind of AI? I felt uncomfortable pushing myself onto a new tool when I had no
-clear need for it and no clear understanding of it. Until then, I thought Claude Code was something
-developers used to write code, or to run several AI agents at once in separate windows. When I had asked about
-it in April, Claude had said much the same: it was meant for full-time developers. Still, I knew I
-would not learn it without trying it.</p>
-<p>There was no one I could ask about this in person, so on June 6 I sat down with Claude to work it out
-myself, starting with the characteristics of my work and what I needed. The repetitive part of my work
-that bothered me most turned out to be keeping track of commitments, such as when I had told a
-student I would get back to them, or what I had said would be on the next quiz. Those commitments
-were scattered across my journal, notes I sent to myself in a messaging app, Outlook, and things I
-said out loud in lectures, which were recorded on Zoom and transcribed. I rarely forgot them outright,
-but I often had the feeling that I was about to. We narrowed the plan to the two things my existing
-tools could not do: pull commitments out of lecture transcripts, and search my own saved notes by
-meaning. Reminders I could leave to my calendar. For storage I chose plain files in a Google Drive
-folder with an index, instead of Notion, so the records would not depend on an outside service or sit
-in my school account.</p>
-<p>To connect the pieces, Claude first suggested a workflow tool I had never heard of. When I asked
-whether that was what Claude Code was for, the plan shifted to Claude Code. I told Claude I did not
-really understand what Claude Code was, and installed it that day to try it.</p>
-<p>The first thing I asked it to do was read one of my lecture transcripts and list the promises I had
-made to students in class, such as &quot;this will be on the next exam&quot; or &quot;I&#39;ll get to this next week.&quot;
-In 26 seconds it found fifteen, sorted them into categories, and pointed out which ones to deal with
-first. Then I asked it to save the list as a file, and it did. The same job in a chat window would
-have taken six steps on my part: open the file, copy the text, paste it into the chat, copy the
-answer, create a new file, and save it. In Claude Code it took two short requests, one for each. The AI behind both is the
-same, but the chat window can only answer, while Claude Code
-can also act on the files on my computer, asking my permission before each step. From that point on,
-I moved the work out of the chat window.</p>
-<p>That same day,
-the plan became the first version of the database described in the next section: a
-bot on the Mac mini that stays on, waits for messages from my phone, and files them. By the end of
-June, the research paper I was developing for the Math Readiness Initiative, with its analysis
-scripts and manuscript files, had moved to Claude Code as well.</p>
-<h2>A database of my teaching materials</h2>
-<p>Claude Code opens inside a folder on my computer. Each folder holds one kind of work along with
-everything that has been written down about it, and the agent reads those files before it does
-anything. Dividing the information this way lets each agent concentrate on its own role, working only
-from what it has been given. My college folder and my personal folder may both hold a schedule, for
-example, but the two schedules are about different things, and neither agent should confuse one with
-the other. I keep more than ten of these folders: some for the college, some personal, and some that
-exist for a single job, such as one piece of software.</p>
-<h3>Course materials, lecture transcripts and lab notes</h3>
-<p>One of these folders holds my teaching materials, built as a database. An agent read through my
-slides and wrote their content out as text files, organized by chapter and topic. It also linked the
-transcripts Zoom makes of my lecture recordings to the matching slides, so for any topic I can see both what
-the slides say and how I taught it in class. The folder holds my lab materials and the
-documents I have written for the college as well. During CHEM V120B last summer I sent field notes to
-it from the lab bench through the phone bot described above. Each recorded what went wrong with a
-procedure and what to change next time, written within minutes of seeing it. The lab technician&#39;s preparation
-emails and photos are there too, filed by course and by experiment in date order, so before a lab I
-can see how that experiment has been set up in past years. This semester the full-term section runs
-ahead of the late-start one, so after a full-term lecture an agent reads the Zoom transcript against my
-plan and drafts what to change when I teach that chapter to the late-start section.</p>
-<p>As the material grows, reading through all of it for every question stops working. An agent also
-analyzes new material as it comes in, so comparisons across semesters are ready when I need them, as
-with the list below.</p>
-<h3>Recurring student difficulties</h3>
-<p>I have taught CHEM V101 three times with recordings. The notes built from the Zoom transcripts of those
-three semesters list, chapter by chapter, the places where students got stuck, each tagged with how
-many of the three semesters it came up in. A place that came up once may come from something that
-happened that day. A place that came up in all three comes from the material itself, and students will
-likely get stuck there again. I read this list the evening before I teach a chapter, and it decided
-which of the simulations described below were built first.</p>
-<h2>Connecting AI to Canvas</h2>
-<p>The last of the <a href="#understanding-different-levels-of-ai-use">levels above</a> is where AI works directly
-with websites and services, instead of handing me text to carry over, and where I build tools that run
-on their own. In my work the service that matters most is Canvas, where every course at the college
-runs.</p>
-<h3>The Canvas API</h3>
-<p>Canvas is normally edited by clicking through its pages in a browser. It also has an API, a way for
-a program to reach a course directly without going through the screens. That lets my AI agent make
-changes for me. A change can be written down once as a script, a short set of instructions, and then
-run with one command however many pages it touches. I work this way in my own CHEM V101 courses, the
-chemistry department&#39;s shared course, and the Distance Education Advisory Group&#39;s course. Every change
-follows the same order: read what is there, run the change without saving it, show me the result, and
-only then write.</p>
-<h3>A Canvas course for the Distance Education Advisory Group</h3>
-<p>The Distance Education Advisory Group&#39;s working material was scattered. Older agendas and minutes
-sat on the college website, newer ones in a public board system that shows one meeting at a time,
-and the documents people shared during meetings lived in Teams chat threads. Answering &quot;did we
-already discuss this?&quot; meant knowing where to look and opening meetings one by one.</p>
-<p>I proposed a Canvas course for the group as its central repository. It came up at three meetings
-between March and May 2026, and in May the group supported it. Matthew Moore, one of the group&#39;s
-tri-chairs, created the shell that afternoon.</p>
-<p>I built the structure that evening, before any content went in. A Start Here module holds the group&#39;s charge, its roster
-and roles, its goals, its governance structure and the district&#39;s DE handbook. A Meetings module is
-organized by academic year. A Standing Items module mirrors the standing items on the group&#39;s own
-agenda: the DE strategic plan, AI and academic integrity, the testing center, accessibility. A
-Resource Library holds the rest. The meeting record went in once the frame was there, thirty-five
-meetings from September 2021 to May 2026 and sixty-eight documents. I gathered the older PDFs from the
-college website, and Claude Code sorted them by year and uploaded them. For the board system a script
-finds every published meeting, renders the agenda and minutes to PDF, and names them by date. Over the
-summer other members began adding to the course and editing its pages.</p>
-<figure class="fig"><img src="../assets/content/deag/vcdeag-course-modules.png" alt="" loading="lazy" decoding="async" data-eink><figcaption>The module list of the Distance Education Advisory Group's Canvas course: Start Here, Meetings, Standing Items, Resource Library, and AI-Use Showcase.</figcaption></figure>
-<p>The day the course was created I asked Matthew Moore to add Nectir, an AI assistant the college
-already had, and he installed it the next day. In June Meg Phelps, Instructional Technologist and
-Designer in Ventura College Distance Education, switched on its connection to Canvas at my request,
-and I configured it to answer from the group&#39;s own minutes and pages.</p>
-<p>At the first meeting of the fall, on September 10, the course was an agenda item. The group agreed
-without objection to enroll every member, and at a member&#39;s request I shared my screen and walked
-everyone through it. The next day Ali Olson-Pacheco, a member of the group, used Nectir to ask what
-work had already been done on revising the group&#39;s charge. It walked her through a year of minutes,
-and she found the working draft on the course&#39;s first page. I checked its answer against the minutes
-and corrected one line, because a pending clarification it had attached to the charge belonged to a
-different agenda item. Matthew Moore replied that the research would keep the group from reinventing
-the wheel.</p>
-<p>One academic year, 2024–25, is still missing from the course, the older files still carry their
-original names, and the sixteen PDFs the script rendered lack the accessibility tags the older,
-hand-made ones have. All three are on my list.</p>
-<h3>The chemistry department&#39;s shared course</h3>
-<p>The chemistry department keeps a shared Canvas course that works as a library for every chemistry
-instructor: syllabi, lab manuals, lecture materials, exams and videos for five courses. Over the years
-the files had piled up with no naming convention, the modules were organized in different ways, and
-old and current versions sat side by side, so an instructor opening it could not easily tell which
-version was current. I took on reorganizing it in July 2026.</p>
-<figure class="fig"><img src="../assets/content/ai-integration/dept-course-v101-module.png" alt="" loading="lazy" decoding="async" data-eink><figcaption>The CHEM V101 module in the chemistry department's shared Canvas course, listing six pages: Syllabus &amp; Schedule, Lecture Materials, Lab Materials, Sample Tests, Sample Practice and Videos.</figcaption></figure>
-<p>Because the course belongs to the whole department, every bulk change went through the same steps.
-The agent first produced a table of what it would change, without changing anything, and I approved
-it. It then ran the change on one or two items and read them back from Canvas before the rest went
-ahead. Nothing was deleted: old versions were marked and hidden, and every change was logged so it can
-be undone. Each course now has the same six sections (Syllabus &amp; Schedule, Lecture Materials, Lab
-Materials, Sample Tests, Sample Practice, Videos). Across the course, 398 files were renamed to one
-convention, the current V101 lab manual was uploaded (until then the course had held only the 2019
-edition), and forty-three videos that had been stuck in unpublished modules were linked from new Videos pages. A
-&quot;What Changed &amp; When&quot; page, generated from the log, lets colleagues find where their files went. In
-August, after I approved each batch, an agent added the markup a screen reader depends on to 140 table
-headers across forty pages, most of them pages the reorganization itself had created.</p>
-<p>The course also holds the department&#39;s meeting log, a summary page for each department meeting that
-I have kept since April 2025. There are eleven as of September 2026.</p>
-<h3>One course in two Canvas shells</h3>
-<p>Since Fall 2025, lecture and lab have been combined under one CRN, and Canvas creates a separate
-shell for each CRN, so a single course can end up split across several shells. The department has
-used two remedies: a blueprint, which copies one master shell into the others, and a hard link, which
-merges sections into one shell. I teach all of my late-start CHEM V101 sections, so I merged them
-into one shell. My two full-term sections could not be merged, because another instructor teaches one
-of the lab sections, so that course runs in two shells. After each class a summary has to go into both,
-in two parts: <em>What Happened</em> (the day&#39;s notes, the recording link, any quiz and its key) and <em>What
-Will Happen</em> (the next class, upcoming quizzes and deadlines). The day&#39;s files also have to be placed in
-the right module in each shell. I used to do all of that by hand, twice. Now one script does it for
-both shells.</p>
-<figure class="fig"><img src="../assets/content/ai-integration/class-summary-2026-09-23.png" alt="" loading="lazy" decoding="async" data-eink><figcaption>A Canvas announcement titled [9/23] Class Summary. Under What Happened: the Chapter 4 Day 1 notes, the recording link (hidden here), and Quiz 2 with its key. Under What Will Happen: finishing Chapter 4 with Practice Quiz 3 on Monday 9/28, Quiz 3 on Wednesday 9/30, a note on showing full setup in calculations, and the Chapter 4 Worksheet due 9/30.</figcaption></figure>
-<h3>Simulations for CHEM V101</h3>
-<p>The simulations have a page of their own. I wanted demonstrations that fit lecture, and more in Canvas
-for students to do than read pages and upload files. Building them used to be out of reach, because I
-would have had to learn to program first. The database above is what made them possible. I did not
-have to explain my course, because the agent already had the analogy I use for electronegativity, the
-numbers I put on the board and the order I teach topics in, so what students open in Canvas matches
-what they heard in lecture. Through the API, each simulation goes onto the module page next to the
-material it belongs to, and a fix is re-uploaded to every course that uses it in one run. There are
-thirty-five as of September 2026.</p>
-<p>Each one still goes past me before students see it. One showed a rearranged equation with a ÷ sign,
-and I had it rebuilt as a fraction, because the point of that lesson is that <em>x</em> is in the
-denominator and a ÷ sign hides it.</p>
-<h3>Comments matched to wrong answers on lab quizzes</h3>
-<p>In September 2026 I began sending automatic comments on CHEM V101 lab quizzes, and have kept doing so
-since. Each wrong choice on a multiple-choice question has an explanation written in advance. After
-a quiz is graded, a script built with the agent puts together the explanations for the letters a
-student chose and posts them, with the graded scan, as a comment on that student&#39;s submission. It
-works when a quiz is entirely multiple choice; free-response work is still graded by hand.</p>
-<h3>A classroom clock and timer</h3>
-<p>Once the simulations were working, I wondered whether I could make a clock as well. I put a timer on
-the projector whenever the class is working against time, such as a quiz or fifteen minutes on a
-practice set. The free clock site I had been using had filled with advertising, which is a
-distraction in front of a class during a quiz. So I made my own
-(<a href="https://tools.rubyeye19.com/clock/">tools.rubyeye19.com/clock</a>). It is a single HTML file with no
-external dependencies, a clock and a countdown timer readable from the back of the room. Because
-nothing loads from outside, it keeps working if the network drops mid-class.</p>
-<figure class="fig"><img src="../assets/content/ai-integration/clock-from-back-row-2026-09-28.jpg" alt="" loading="lazy" decoding="async" data-eink><figcaption>An empty lecture hall photographed from the back row. The projector screen at the front shows the clock, 2:22:33 PM, with the date Monday, September 28, 2026 beneath it. The digits are legible from the last row of seats.</figcaption></figure>
-<figure class="fig"><img src="../assets/content/ai-integration/timer-on-projector-2026-09-28.jpg" alt="" loading="lazy" decoding="async" data-eink><figcaption>The same projector screen showing the countdown timer at 19:57, with a thin progress bar running across the screen below the digits.</figcaption></figure>
-<h2>Next steps</h2>
-<p>Until now I have brought AI into my work in the same order each time, starting from something that
-was missing and then finding a tool to fill it, as with keeping track of what I had promised
-students or posting the same class summary to two Canvas shells. That order made sense while I
-understood my own work far better than I understood the tools, and adopting a tool I neither needed
-nor understood would have been a risk.</p>
-<p>My understanding of the tools has since caught up with my understanding of the work, so I can start
-from an idea as well as from a problem. The simulations are one example. They started from something I
-wanted, which was to give students a wider range of things to try and practice, and having them
-inside Canvas would make my hybrid section more fully a hybrid course. Building them would have been
-far out of reach if AI were not writing the code, and once it was, it became a matter of deciding to
-try.</p>
-<p>The next step is to keep trying ideas I would once have set aside, and to check each one before it
-reaches a student, as I did with the simulations.</p>
-
-    </div>
+  <article class="part">
+    <p class="partno">Part 5</p>
+    <h1 class="ptitle">AI Integration</h1>
+    <p class="blurb">How things built without being asked for became things the department uses.</p>
+    <ol class="chapters"><li><a href="getting-started.html"><span class="t">Getting Started with AI</span><span class="v"></span></a></li><li><a href="teaching-materials-database.html"><span class="t">Teaching Materials Database</span><span class="v"></span></a></li><li><a href="connecting-ai-to-canvas.html"><span class="t">Connecting AI to Canvas</span><span class="v"></span></a></li><li><a href="tools-for-students-and-lecture.html"><span class="t">Tools for Students and Lecture</span><span class="v"></span></a></li></ol>
+    
     <nav class="pager" aria-label="Previous and next">
     <a class="prev" href="../math-readiness/index.html"><span class="k">‹ Previous</span><span class="t">Math Readiness Initiative</span></a>
     <a class="next" href="../instructional-materials/index.html"><span class="k">Next ›</span><span class="t">Instructional Materials</span></a>
   </nav>
   </article>
-</main><footer class="loc"><span class="l">AI Integration</span><span class="r" id="loc-pct">0%</span></footer><script src="../assets/site.js?v=4ab4707e24"></script>
+</main><footer class="loc"><span class="l">Part 5 · AI Integration</span><span class="r" id="loc-pct">0%</span></footer><script src="../assets/site.js?v=6f561c2b40"></script>
 </body>
 </html>
