@@ -104,6 +104,7 @@ a{color:inherit}
 
 /* ============ prose — book setting: indent, no gaps ============ */
 .prose{text-align:justify;hyphens:auto;-webkit-hyphens:auto;hyphenate-limit-chars:6 3 3}
+.prose p{text-wrap:pretty}
 :root[data-align="left"] .prose{text-align:left;hyphens:manual}
 .prose p{margin:0}
 .prose p + p{text-indent:1.5em}
