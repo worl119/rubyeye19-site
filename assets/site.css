@@ -12,23 +12,24 @@
 :root, :root[data-page="grey"]{
   --page:#e3e3df; --page-2:#d8d8d3; --ink:#17171a; --ink-2:#4a4a4c; --ink-3:#7a7a7c;
   --rule:#a9a9a5; --rule-2:#c6c6c1; --sel:#17171a; --sel-ink:#e3e3df;
-  --grain-op:.05;
+  --grain-op:.07;
 }
-:root[data-page="white"]{ --page:#f8f8f6; --page-2:#ececea; --ink:#141416; --ink-2:#48484a; --ink-3:#7c7c7e; --rule:#b4b4b0; --rule-2:#d4d4d0; --sel:#141416; --sel-ink:#f8f8f6; --grain-op:.03; }
-:root[data-page="sepia"]{ --page:#eee4d0; --page-2:#e2d6bf; --ink:#2b2418; --ink-2:#5c523f; --ink-3:#8a7f69; --rule:#b8ab90; --rule-2:#d3c8b0; --sel:#2b2418; --sel-ink:#eee4d0; --grain-op:.05; }
+:root[data-page="white"]{ --page:#f8f8f6; --page-2:#ececea; --ink:#141416; --ink-2:#48484a; --ink-3:#7c7c7e; --rule:#b4b4b0; --rule-2:#d4d4d0; --sel:#141416; --sel-ink:#f8f8f6; --grain-op:.055; }
+:root[data-page="sepia"]{ --page:#eee4d0; --page-2:#e2d6bf; --ink:#2b2418; --ink-2:#5c523f; --ink-3:#8a7f69; --rule:#b8ab90; --rule-2:#d3c8b0; --sel:#2b2418; --sel-ink:#eee4d0; --grain-op:.07; }
 :root[data-page="dark"]{ --page:#161617; --page-2:#222224; --ink:#d9d9d5; --ink-2:#a3a3a0; --ink-3:#6f6f6d; --rule:#454546; --rule-2:#333335; --sel:#d9d9d5; --sel-ink:#161617; --grain-op:.06; }
 
 :root{
   --serif:"Literata",Georgia,"Times New Roman",serif;
   --sans:"Inter",-apple-system,system-ui,"Helvetica Neue",Arial,sans-serif;
   --face:var(--serif);
-  --size:18px; --lead:1.6; --measure:38rem;
+  --size:18px; --lead:1.6; --measure:42rem;
   --bar:2.6rem;
 }
 :root[data-face="sans"]{ --face:var(--sans); }
 :root[data-size="1"]{ --size:15px } :root[data-size="2"]{ --size:16.5px } :root[data-size="3"]{ --size:18px } :root[data-size="4"]{ --size:20px } :root[data-size="5"]{ --size:22.5px }
 :root[data-lead="tight"]{ --lead:1.42 } :root[data-lead="normal"]{ --lead:1.6 } :root[data-lead="loose"]{ --lead:1.85 }
-:root[data-margin="narrow"]{ --measure:46rem } :root[data-margin="normal"]{ --measure:38rem } :root[data-margin="wide"]{ --measure:31rem }
+/* page width: the reader picks the text column (until 2026-10-18 this was "Margins", with the scale inverted) */
+:root[data-width="narrow"]{ --measure:34rem } :root[data-width="medium"]{ --measure:42rem } :root[data-width="wide"]{ --measure:52rem }
 
 *{box-sizing:border-box}
 html,body{height:100%}
@@ -38,11 +39,19 @@ body{
   display:grid;grid-template-rows:var(--bar) 1fr var(--bar);overflow:hidden;
   -webkit-font-smoothing:antialiased;
 }
-/* the panel's faint texture — an e-ink surface is not perfectly flat */
-body::before{
-  content:"";position:fixed;inset:0;pointer-events:none;z-index:0;opacity:var(--grain-op);
-  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='140' height='140' filter='url(%23n)'/%3E%3C/svg%3E");
+/* the panel's matte surface (2026-10-18, Howard: "the texture of a matte screen"). It lies over
+   everything, ink included, the way an anti-glare film does: fine light and dark pores plus a slow
+   unevenness. Plain alpha layers, no blend modes, so scrolling stays cheap. */
+body::after{
+  content:"";position:fixed;inset:0;pointer-events:none;z-index:40;opacity:var(--grain-op);
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='f' x='0' y='0' width='100%25' height='100%25'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.95' numOctaves='3' seed='7' stitchTiles='stitch'/%3E%3CfeColorMatrix type='matrix' values='0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 2 -1'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url%28%23f%29'/%3E%3C/svg%3E"),url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='f' x='0' y='0' width='100%25' height='100%25'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.95' numOctaves='3' seed='19' stitchTiles='stitch'/%3E%3CfeColorMatrix type='matrix' values='0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 0 -2 1'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url%28%23f%29'/%3E%3C/svg%3E"),url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='720' height='720'%3E%3Cfilter id='f' x='0' y='0' width='100%25' height='100%25'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.0045' numOctaves='2' seed='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='matrix' values='0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 .6 -.3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url%28%23f%29'/%3E%3C/svg%3E");
+  background-size:180px 180px,180px 180px,720px 720px;
 }
+/* on a high-density screen the pores are drawn at device pixels, as fine as the real film */
+@media (min-resolution:2dppx){
+  body::after{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='360' height='360'%3E%3Cfilter id='f' x='0' y='0' width='100%25' height='100%25'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.95' numOctaves='3' seed='7' stitchTiles='stitch'/%3E%3CfeColorMatrix type='matrix' values='0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 2 -1'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url%28%23f%29'/%3E%3C/svg%3E"),url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='360' height='360'%3E%3Cfilter id='f' x='0' y='0' width='100%25' height='100%25'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.95' numOctaves='3' seed='19' stitchTiles='stitch'/%3E%3CfeColorMatrix type='matrix' values='0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 0 -2 1'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url%28%23f%29'/%3E%3C/svg%3E"),url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='720' height='720'%3E%3Cfilter id='f' x='0' y='0' width='100%25' height='100%25'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.0045' numOctaves='2' seed='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='matrix' values='0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 .6 -.3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url%28%23f%29'/%3E%3C/svg%3E")}
+}
+@media print{ body::after{display:none} }
 a{color:inherit}
 
 /* ============ the chrome: small sans, quiet ============ */
@@ -135,6 +144,18 @@ a{color:inherit}
 .chapters .v{font-family:var(--sans);font-size:11px;letter-spacing:.05em;text-transform:uppercase;color:var(--ink-3);white-space:nowrap}
 .chapters li.planned{color:var(--ink-3)} .chapters li.planned .t{font-style:italic}
 
+/* ---- how to use this site (Part 1's title page) ---- */
+.guide{margin:3rem 0 0;text-align:left}
+.guide h2{font-weight:600;font-variant-caps:small-caps;letter-spacing:.05em;font-size:1.2em;text-align:center;margin:0 0 1rem}
+.guide h2::before{content:"";display:block;width:3.5rem;height:1px;background:var(--ink-2);margin:0 auto 1em}
+.guide dl{margin:0;border-top:1px solid var(--rule)}
+.guide dl > div{display:grid;grid-template-columns:5.2rem 1fr;gap:1rem;align-items:baseline;padding:.55em .2em;border-bottom:1px solid var(--rule-2)}
+.guide dt{font-family:var(--sans);font-size:12px;color:var(--ink-2);white-space:nowrap}
+.guide dt .ic,.guide dt .tx{cursor:default;display:inline-block}
+.guide dt .kw{font-size:11px;letter-spacing:.05em;text-transform:uppercase;color:var(--ink-3)}
+.guide dd{margin:0;font-size:.86em;line-height:1.45;color:var(--ink)}
+@media (max-width:40rem){ .guide dl > div{grid-template-columns:3.6rem 1fr;gap:.6rem} }
+
 /* ============ prev / next ============ */
 .pager{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-top:3.5rem;padding-top:1rem;border-top:1px solid var(--rule-2);text-align:left}
 .pager a{display:flex;flex-direction:column;gap:.25rem;text-decoration:none}
@@ -143,26 +164,45 @@ a{color:inherit}
 .pager .t{font-size:.95em}
 .pager a:hover .t{text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:.2em}
 
-/* ============ the cover ============ */
+/* ============ the cover — type only (photo slot dropped 2026-10-18) ============ */
 .cover{display:flex;flex-direction:column;padding:0}
-.cover-top{padding:clamp(2rem,7vh,4.5rem) 1.5rem 0;text-align:center}
+.cover-top{flex:1 0 auto;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:2rem 1.5rem;text-align:center}
 .ctitle{font-weight:500;font-size:clamp(2rem,6vw,3.4rem);letter-spacing:-.01em;line-height:1.05;margin:0 0 .8rem}
 .cmeta{margin:0;font-family:var(--sans);font-size:13px;line-height:1.6;color:var(--ink-2);letter-spacing:.03em}
 .start{
-  align-self:center;margin:clamp(1.6rem,6vh,3.2rem) 0;font-family:var(--sans);font-size:12px;letter-spacing:.14em;text-transform:uppercase;
+  margin:clamp(1.6rem,6vh,3.2rem) 0 0;font-family:var(--sans);font-size:12px;letter-spacing:.14em;text-transform:uppercase;
   color:var(--ink-2);text-decoration:none;border:1px solid var(--rule);padding:.6em 1.2em;
 }
 .start:hover{background:var(--sel);color:var(--sel-ink);border-color:var(--sel)}
-.cover-art{position:relative;flex:1;min-height:42vh;margin:0;overflow:hidden;border-top:1px solid var(--rule-2)}
-.cover-art .photo{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
-.cover-art .photo.placeholder{display:flex;align-items:flex-start;justify-content:flex-start;padding:1rem 1.2rem;font-family:var(--sans);font-size:12px;color:var(--ink-3);background:repeating-linear-gradient(135deg,transparent 0 14px,var(--page-2) 14px 15px)}
-.cover-art .photo.placeholder span{border:1px dashed var(--ink-3);padding:.3em .6em;max-width:36em;background:var(--page)}
 .cname{
-  position:absolute;right:clamp(1rem,5vw,3.5rem);bottom:clamp(1rem,6vh,3rem);z-index:2;
+  align-self:flex-end;margin:0 clamp(1rem,5vw,3.5rem) clamp(1rem,6vh,3rem);
   display:flex;flex-direction:column;align-items:flex-end;
   font-family:var(--sans);font-weight:500;font-size:clamp(2.2rem,8vw,5.2rem);line-height:.95;letter-spacing:.02em;color:var(--ink);
 }
-.cname span{background:var(--page);padding:.02em .1em}
+
+/* ============ the short contents at the left — wide screens only ============ */
+.side{display:none}
+@media (min-width:75rem){
+  :root{--side:15.5rem}
+  .side{
+    display:block;position:fixed;z-index:3;top:var(--bar);bottom:var(--bar);left:0;width:var(--side);
+    overflow-y:auto;scrollbar-width:none;padding:1.6rem 1rem 1.6rem 1.2rem;
+    border-right:1px solid var(--rule-2);font-family:var(--sans);font-size:12.5px;line-height:1.35;
+  }
+  .side::-webkit-scrollbar{display:none}
+  .side ol,.side ul{list-style:none;margin:0;padding:0}
+  .side > ol > li{margin:0 0 .15rem}
+  .side a{display:block;text-decoration:none;color:var(--ink-3);padding:.32rem .4rem;border-radius:2px}
+  .side a:hover{color:var(--ink);background:var(--page-2)}
+  .side a:focus-visible{outline:2px solid var(--ink);outline-offset:1px}
+  .side .s{display:flex;gap:.55rem;color:var(--ink-2)}
+  .side .s .n{min-width:1em;color:var(--ink-3);font-variant-numeric:tabular-nums}
+  .side .s.here{color:var(--ink);font-weight:500}
+  .side ul{margin:.15rem 0 .5rem 1.55rem;border-left:1px solid var(--rule-2)}
+  .side .p{padding:.28rem .4rem .28rem .7rem;border-radius:0}
+  .side .p.here{color:var(--ink);font-weight:500;box-shadow:inset 2px 0 0 var(--ink)}
+  .side ~ .screen{padding-left:var(--side)}
+}
 
 /* ============ Go To ============ */
 .goto{
@@ -232,9 +272,7 @@ a{color:inherit}
   .status .left,.status .right{gap:.3rem}
   .status .name{display:none}
   .tx{padding:.25rem .4rem;font-size:11px}
-  .cname{font-size:clamp(1.9rem,13vw,3rem);right:1rem;bottom:1.2rem}
-  .cover-art .photo.placeholder{padding:.8rem}
-  .cover-art .photo.placeholder span{max-width:100%}
+  .cname{font-size:clamp(1.9rem,13vw,3rem);margin:0 1rem 1.2rem}
   .ctitle{font-size:clamp(1.8rem,9vw,2.6rem)}
 }
 /* a page that does not scroll reports no position */
@@ -250,7 +288,7 @@ a{color:inherit}
 @media (max-width:40rem){ .gallery{grid-template-columns:1fr 1fr;gap:.5rem} }
 
 /* ---- lightbox: the colour original, lifted off the grey panel ---- */
-.prose img.eink,.cover-art img.eink{cursor:zoom-in}
+.prose img.eink{cursor:zoom-in}
 #lightbox{position:fixed;inset:0;z-index:60;background:rgba(10,10,10,.92);display:flex;align-items:center;justify-content:center;padding:2rem;cursor:zoom-out}
 #lightbox[hidden]{display:none}
 #lightbox figure{margin:0;max-width:100%;max-height:100%;display:flex;flex-direction:column;align-items:center;gap:.6rem}

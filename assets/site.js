@@ -2,8 +2,8 @@
 (function(){
   var root = document.documentElement;
   var screen = document.getElementById('screen');
-  var KEYS = ['page','face','size','lead','margin','align'];
-  var DEF = {page:'grey', face:'serif', size:'3', lead:'normal', margin:'normal', align:'justify'};
+  var KEYS = ['page','face','size','lead','width','align'];
+  var DEF = {page:'grey', face:'serif', size:'3', lead:'normal', width:'medium', align:'justify'};
   function get(k){ return root.getAttribute('data-'+k) || DEF[k]; }
   function set(k, v){
     root.setAttribute('data-'+k, v);
@@ -131,7 +131,7 @@
   }
   function closeBox(){ if (box.hidden) return; box.hidden = true; document.body.classList.remove('boxed'); refresh(); }
   document.addEventListener('click', function(e){
-    var img = e.target.closest('.prose img, .cover-art img'); if (!img || !img.dataset.color) return;
+    var img = e.target.closest('.prose img'); if (!img || !img.dataset.color) return;
     e.preventDefault(); openBox(img);
   });
   box.addEventListener('click', closeBox);

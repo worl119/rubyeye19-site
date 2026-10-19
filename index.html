@@ -9,7 +9,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Literata:ital,opsz,wght@0,7..72,300..700;1,7..72,300..700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="./assets/site.css">
-<script>(function(){try{var r=document.documentElement,p=localStorage.getItem('rd-page');r.setAttribute('data-page',p||'grey');['face','size','lead','margin','align'].forEach(function(k){var v=localStorage.getItem('rd-'+k);if(v)r.setAttribute('data-'+k,v);});}catch(e){document.documentElement.setAttribute('data-page','grey');}})();</script>
+<script>(function(){try{var r=document.documentElement,p=localStorage.getItem('rd-page');r.setAttribute('data-page',p||'grey');['face','size','lead','width','align'].forEach(function(k){var v=localStorage.getItem('rd-'+k);if(v)r.setAttribute('data-'+k,v);});}catch(e){document.documentElement.setAttribute('data-page','grey');}})();</script>
 </head>
 <body>
 <header class="status">
@@ -34,7 +34,7 @@
   <div class="tab" data-tab="layout" hidden>
     <div class="opt"><span class="lbl">Page color</span><span class="swatches" data-var="page"><button type="button" class="swatch sw-grey" data-v="grey" aria-label="Grey" aria-pressed="false"></button><button type="button" class="swatch sw-white" data-v="white" aria-label="White" aria-pressed="false"></button><button type="button" class="swatch sw-sepia" data-v="sepia" aria-label="Sepia" aria-pressed="false"></button><button type="button" class="swatch sw-dark" data-v="dark" aria-label="Dark" aria-pressed="false"></button></span></div>
     <div class="opt"><span class="lbl">Alignment</span><span class="seg" data-var="align"><button type="button" data-v="justify" aria-pressed="false">Justified</button><button type="button" data-v="left" aria-pressed="false">Left</button></span></div>
-    <div class="opt"><span class="lbl">Margins</span><span class="seg" data-var="margin"><button type="button" data-v="narrow" aria-pressed="false">Narrow</button><button type="button" data-v="normal" aria-pressed="false">Normal</button><button type="button" data-v="wide" aria-pressed="false">Wide</button></span></div>
+    <div class="opt"><span class="lbl">Page width</span><span class="seg" data-var="width"><button type="button" data-v="narrow" aria-pressed="false">Narrow</button><button type="button" data-v="medium" aria-pressed="false">Medium</button><button type="button" data-v="wide" aria-pressed="false">Wide</button></span></div>
   </div>
   <button type="button" class="reset" id="aa-reset">Reset to defaults</button>
 </div></span>
@@ -50,12 +50,9 @@
   <div class="cover-top">
     <h1 class="ctitle">Tenure Portfolio</h1>
     <p class="cmeta">2023–2026<br>Department of Chemistry, Ventura College</p>
+    <a class="start" href="overview/index.html">Click to start ›</a>
   </div>
-  <a class="start" href="overview/cover-letter.html">Click to start ›</a>
-  <div class="cover-art">
-    <div class="photo placeholder"><span>Photograph to come — Howard's own shot of the VC Science building. (The web photo shared 2026-09-05 is someone else's and cannot be used.)</span></div>
-    <div class="cname"><span>HOWARD</span><span>HAN</span></div>
-  </div>
+  <div class="cname"><span>HOWARD</span><span>HAN</span></div>
 </main><footer class="loc"><span class="l">Cover</span><span class="r" id="loc-pct">0%</span></footer><script src="./assets/site.js"></script>
 </body>
 </html>
