@@ -180,6 +180,7 @@ a{color:inherit}
   -webkit-mask-image:linear-gradient(to right,transparent,#000 8%,#000 92%,transparent),linear-gradient(to bottom,transparent,#000 12%);
   -webkit-mask-composite:source-in;mask-image:linear-gradient(to right,transparent,#000 8%,#000 92%,transparent),linear-gradient(to bottom,transparent,#000 12%);mask-composite:intersect}
 /* one version of the drawing per page colour: paper and ink re-mapped to that page (2026-10-19) */
+.cnote{flex:none;margin:.2rem 1rem .7rem;text-align:center;text-wrap:balance;font-family:var(--sans);font-size:11px;letter-spacing:.02em;color:var(--ink-3)}
 :root[data-page="white"] .cv-img{background-image:url(cover/cover-white.webp)}
 :root[data-page="sepia"] .cv-img{background-image:url(cover/cover-sepia.webp)}
 :root[data-page="dark"] .cv-img{background-image:url(cover/cover-dark.webp)}
