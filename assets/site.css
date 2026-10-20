@@ -174,12 +174,16 @@ a{color:inherit}
 /* ============ the cover (2026-10-19): the building, breaking into element tiles at its edges,
    pinned to the bottom under the type. Its edges fade into the page. ============ */
 .cover{display:flex;flex-direction:column;padding:0}
-.cv-img{display:block;flex:none;height:min(54vh,calc(100vw / 1.5));width:auto;max-width:100%;margin:0 auto;pointer-events:none;user-select:none;
+.cv-img{display:block;flex:none;align-self:center;aspect-ratio:3/2;height:min(54vh,calc(100vw / 1.5));pointer-events:none;
+  background:url(cover/cover-grey.webp) center/100% 100% no-repeat;
   -webkit-mask-image:linear-gradient(to right,transparent,#000 8%,#000 92%,transparent),linear-gradient(to bottom,transparent,#000 12%);
   -webkit-mask-composite:source-in;mask-image:linear-gradient(to right,transparent,#000 8%,#000 92%,transparent),linear-gradient(to bottom,transparent,#000 12%);mask-composite:intersect}
-:root[data-page="dark"] .cv-img{opacity:.55}
+/* one version of the drawing per page colour: paper and ink re-mapped to that page (2026-10-19) */
+:root[data-page="white"] .cv-img{background-image:url(cover/cover-white.webp)}
+:root[data-page="sepia"] .cv-img{background-image:url(cover/cover-sepia.webp)}
+:root[data-page="dark"] .cv-img{background-image:url(cover/cover-dark.webp)}
 /* on a phone the drawing runs a little past both edges, so the tiles stay big enough to read */
-@media (max-width:40rem){ .cover{overflow-x:hidden} .cv-img{height:auto;width:135vw;max-width:none;margin-left:-17.5vw} }
+@media (max-width:40rem){ .cover{overflow-x:hidden} .cv-img{height:auto;width:135vw;max-width:none} }
 .cover-top{flex:1 0 auto;padding-block:1rem;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:2rem 1.5rem;text-align:center}
 .ctitle{font-weight:500;font-size:clamp(2rem,6vw,3.4rem);letter-spacing:-.01em;line-height:1.05;margin:0 0 .8rem}
 .cmeta{margin:0;font-family:var(--sans);font-size:13px;line-height:1.6;color:var(--ink-2);letter-spacing:.03em}
