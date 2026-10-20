@@ -171,9 +171,16 @@ a{color:inherit}
 .pager .t{font-size:.95em}
 .pager a:hover .t{text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:.2em}
 
-/* ============ the cover — type only (photo slot dropped 2026-10-18) ============ */
+/* ============ the cover (2026-10-19): the building, breaking into element tiles at its edges,
+   pinned to the bottom under the type. Its edges fade into the page. ============ */
 .cover{display:flex;flex-direction:column;padding:0}
-.cover-top{flex:1 0 auto;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:2rem 1.5rem;text-align:center}
+.cv-img{display:block;flex:none;height:min(54vh,calc(100vw / 1.5));width:auto;max-width:100%;margin:0 auto;pointer-events:none;user-select:none;
+  -webkit-mask-image:linear-gradient(to right,transparent,#000 8%,#000 92%,transparent),linear-gradient(to bottom,transparent,#000 12%);
+  -webkit-mask-composite:source-in;mask-image:linear-gradient(to right,transparent,#000 8%,#000 92%,transparent),linear-gradient(to bottom,transparent,#000 12%);mask-composite:intersect}
+:root[data-page="dark"] .cv-img{opacity:.55}
+/* on a phone the drawing runs a little past both edges, so the tiles stay big enough to read */
+@media (max-width:40rem){ .cover{overflow-x:hidden} .cv-img{height:auto;width:135vw;max-width:none;margin-left:-17.5vw} }
+.cover-top{flex:1 0 auto;padding-block:1rem;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:2rem 1.5rem;text-align:center}
 .ctitle{font-weight:500;font-size:clamp(2rem,6vw,3.4rem);letter-spacing:-.01em;line-height:1.05;margin:0 0 .8rem}
 .cmeta{margin:0;font-family:var(--sans);font-size:13px;line-height:1.6;color:var(--ink-2);letter-spacing:.03em}
 .start{
@@ -182,9 +189,7 @@ a{color:inherit}
 }
 .start:hover{background:var(--sel);color:var(--sel-ink);border-color:var(--sel)}
 .cname{
-  align-self:flex-end;margin:0 clamp(1rem,5vw,3.5rem) clamp(1rem,6vh,3rem);
-  display:flex;flex-direction:column;align-items:flex-end;
-  font-family:var(--sans);font-weight:500;font-size:clamp(2.2rem,8vw,5.2rem);line-height:.95;letter-spacing:.02em;color:var(--ink);
+  margin:0 0 .9rem;font-family:var(--sans);font-weight:500;font-size:13px;letter-spacing:.22em;text-transform:uppercase;color:var(--ink-2);
 }
 
 /* ============ the short contents at the left — wide screens only ============ */
@@ -296,7 +301,6 @@ a{color:inherit}
   .status .left,.status .right{gap:.3rem}
   .status .name{display:none}
   .tx{padding:.25rem .4rem;font-size:11px}
-  .cname{font-size:clamp(1.9rem,13vw,3rem);margin:0 1rem 1.2rem}
   .ctitle{font-size:clamp(1.8rem,9vw,2.6rem)}
 }
 /* a page that does not scroll reports no position */
