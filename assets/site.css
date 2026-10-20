@@ -111,6 +111,8 @@ a{color:inherit}
 :root[data-align="left"] .prose{text-align:left;hyphens:manual}
 .prose p{margin:0}
 .prose p + p{text-indent:1.5em}
+.prose p.signoff,.prose p.sig{text-indent:0}
+.prose p.signoff{margin-top:1.2em}
 .prose h2,.prose h3,.prose h4{text-align:center;hyphens:manual;font-weight:600}
 .prose h2{font-variant-caps:small-caps;letter-spacing:.05em;font-size:1.2em;margin:2.2em 0 1em}
 .prose h2::before{content:"";display:block;width:3.5rem;height:1px;background:var(--ink-2);margin:0 auto 1em}
