@@ -152,16 +152,17 @@ a{color:inherit}
 .chapters li.planned{color:var(--ink-3)} .chapters li.planned .t{font-style:italic}
 
 /* ---- how to use this site (Part 1's title page) ---- */
-.guide{margin:3rem 0 0;text-align:left}
+/* boxed, like a textbook's side panel, so it reads as apart from the portfolio itself (Howard, 2026-10-19) */
+.guide{margin:3rem 0 0;text-align:left;border:1px solid var(--rule);background:color-mix(in srgb,var(--page-2) 45%,var(--page));padding:1.1rem 1.3rem .6rem}
 .guide h2{font-weight:600;font-variant-caps:small-caps;letter-spacing:.05em;font-size:1.2em;text-align:center;margin:0 0 1rem}
-.guide h2::before{content:"";display:block;width:3.5rem;height:1px;background:var(--ink-2);margin:0 auto 1em}
 .guide dl{margin:0;border-top:1px solid var(--rule)}
 .guide dl > div{display:grid;grid-template-columns:5.2rem 1fr;gap:1rem;align-items:baseline;padding:.55em .2em;border-bottom:1px solid var(--rule-2)}
+.guide dl > div:last-child{border-bottom:0}
 .guide dt{font-family:var(--sans);font-size:12px;color:var(--ink-2);white-space:nowrap}
 .guide dt .ic,.guide dt .tx{cursor:default;display:inline-block}
 .guide dt .kw{font-size:11px;letter-spacing:.05em;text-transform:uppercase;color:var(--ink-3)}
 .guide dd{margin:0;font-size:.86em;line-height:1.45;color:var(--ink)}
-@media (max-width:40rem){ .guide dl > div{grid-template-columns:3.6rem 1fr;gap:.6rem} }
+@media (max-width:40rem){ .guide{padding:.9rem .9rem .4rem} .guide dl > div{grid-template-columns:3.6rem 1fr;gap:.6rem} }
 
 /* ============ prev / next ============ */
 .pager{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-top:3.5rem;padding-top:1rem;border-top:1px solid var(--rule-2);text-align:left}
