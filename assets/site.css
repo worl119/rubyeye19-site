@@ -355,3 +355,24 @@ body.boxed .screen{overflow:hidden}
 
 /* a working simulation framed in a page (see the live marker in build.js) */
 .fig.live iframe{display:block;width:100%;height:900px;border:1px solid var(--rule);background:#fff}
+
+/* ============ In brief — a page's own sentences, site only (2026-10-22) ============ */
+.view{display:none}
+.has-brief .view{display:flex;justify-content:center;margin:-1.2rem 0 2rem}
+.view .seg{display:inline-flex;font-family:var(--sans)}
+.view .seg button{flex:0 0 auto;padding:.4em 1em}
+.brief{display:none}
+:root[data-view="brief"] .has-brief .brief{display:block}
+:root[data-view="brief"] .has-brief .prose{display:none}
+.brief{border:1px solid var(--rule);background:color-mix(in srgb,var(--page-2) 45%,var(--page));padding:1.1rem 1.3rem .9rem;margin:0 0 2.4rem}
+.brief h2{font-weight:600;font-variant-caps:small-caps;letter-spacing:.05em;font-size:1.2em;text-align:center;margin:0 0 .9rem}
+.brief ol{margin:0;padding:0 0 0 1.4em;border-top:1px solid var(--rule)}
+.brief li{padding:.6em 0 .6em .2em;border-bottom:1px solid var(--rule-2)}
+.brief li::marker{font-family:var(--sans);font-size:.8em;color:var(--ink-3)}
+.brief .ctx{appearance:none;background:transparent;border:0;padding:0 .1em;cursor:pointer;font-family:var(--sans);font-size:11px;letter-spacing:.04em;color:var(--ink-3);white-space:nowrap}
+.brief .ctx:hover{color:var(--ink);text-decoration:underline;text-decoration-color:var(--link);text-underline-offset:.2em}
+.brief .ctx:focus-visible,.view .seg button:focus-visible{outline:2px solid var(--ink);outline-offset:2px}
+.brief-note{margin:.8rem 0 0;font-family:var(--sans);font-size:11.5px;line-height:1.45;color:var(--ink-3);text-align:left}
+::highlight(brief-at){background-color:var(--link-bg);text-decoration:underline;text-decoration-color:var(--link)}
+@media (max-width:40rem){ .brief{padding:.9rem .9rem .6rem} }
+@media print{ .view,.brief{display:none!important} .prose{display:block!important} }

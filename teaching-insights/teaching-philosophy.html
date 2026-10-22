@@ -8,8 +8,8 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Literata:ital,opsz,wght@0,7..72,300..700;1,7..72,300..700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../assets/site.css?v=d69f825965">
-<script>(function(){try{var r=document.documentElement,p=localStorage.getItem('rd-page');r.setAttribute('data-page',p||'grey');['face','size','lead','width','align'].forEach(function(k){var v=localStorage.getItem('rd-'+k);if(v)r.setAttribute('data-'+k,v);});}catch(e){document.documentElement.setAttribute('data-page','grey');}})();</script>
+<link rel="stylesheet" href="../assets/site.css?v=01ae89c6c7">
+<script>(function(){try{var r=document.documentElement,p=localStorage.getItem('rd-page');r.setAttribute('data-page',p||'grey');['face','size','lead','width','align','view'].forEach(function(k){var v=localStorage.getItem('rd-'+k);if(v)r.setAttribute('data-'+k,v);});}catch(e){document.documentElement.setAttribute('data-page','grey');}})();</script>
 </head>
 <body>
 <header class="status">
@@ -42,7 +42,7 @@
 </header>
 <nav class="goto" id="goto" hidden aria-label="Go to">
   <div class="goto-head"><span>Go To</span><button type="button" class="x" id="goto-close" aria-label="Close">×</button></div>
-  <div class="find"><input type="search" id="find" placeholder="Search this portfolio" aria-label="Search this portfolio" autocomplete="off" spellcheck="false" data-index="../assets/search.json?v=dcddbd9f6b"><p class="find-n" id="find-n" aria-live="polite"></p></div>
+  <div class="find"><input type="search" id="find" placeholder="Search this portfolio" aria-label="Search this portfolio" autocomplete="off" spellcheck="false" data-index="../assets/search.json?v=bb5ddee34d"><p class="find-n" id="find-n" aria-live="polite"></p></div>
   <div id="hits"></div>
   <div id="toc">
   <a class="row" href="../index.html"><span class="t">Cover</span></a>
@@ -50,12 +50,18 @@
   </div>
 </nav><nav class="side" aria-label="Contents"><ol><li><a class="s" href="../overview/index.html"><span class="n">1</span>Overview</a></li><li><a class="s here" href="../teaching-insights/index.html"><span class="n">2</span>Teaching Insights</a><ul><li><a class="p here" href="../teaching-insights/teaching-philosophy.html" aria-current="page">Teaching Philosophy</a></li><li><a class="p" href="../teaching-insights/student-evaluations.html">Student Evaluations</a></li><li><a class="p" href="../teaching-insights/committee-observation-feedback.html">Committee Observation Feedback</a></li><li><a class="p" href="../teaching-insights/self-appraisal.html">Self Appraisal</a></li></ul></li><li><a class="s" href="../course-design/index.html"><span class="n">3</span>Course Design</a></li><li><a class="s" href="../math-readiness/index.html"><span class="n">4</span>Math Readiness Initiative</a></li><li><a class="s" href="../ai-integration/index.html"><span class="n">5</span>AI Integration</a></li><li><a class="s" href="../instructional-materials/index.html"><span class="n">6</span>Instructional Materials</a></li><li><a class="s" href="../collaboration/index.html"><span class="n">7</span>Collaboration</a></li><li><a class="s" href="../professional-activities/index.html"><span class="n">8</span>Professional Activities</a></li><li><a class="s" href="../looking-ahead/index.html"><span class="n">9</span>Looking Ahead</a></li></ol></nav>
 <main class="screen" id="screen">
-  <article class="page">
+  <article class="page has-brief">
     <header class="chapter">
       <p class="orn" aria-hidden="true">§</p>
       <h1>Teaching Philosophy</h1>
       
     </header>
+    <div class="view" role="group" aria-label="How much of this page to show"><span class="seg"><button type="button" data-view="full" aria-pressed="true">Full text</button><button type="button" data-view="brief" aria-pressed="false">In brief</button></span></div>
+    <section class="brief" aria-labelledby="brief-h">
+      <h2 id="brief-h">In brief</h2>
+      <ol><li><span class="q">I cannot force learning to happen in any one student, but I can set conditions that make it more likely.</span> <button type="button" class="ctx" data-i="0">In context ›</button></li><li><span class="q">This year I focused on three variables: who my students are, how I teach, and, newest of all, AI.</span> <button type="button" class="ctx" data-i="1">In context ›</button></li><li><span class="q">State policy widens the range further: since AB 705 and AB 1705, one section of CHEM V101 enrolls students whose math background runs from full fluency to foundational gaps.</span> <button type="button" class="ctx" data-i="2">In context ›</button></li><li><span class="q">For CHEM V101 lab there are 67 short videos of the experiments, and for lecture a library of 35 browser simulations I built this fall.</span> <button type="button" class="ctx" data-i="3">In context ›</button></li><li><span class="q">For Experiment 2 this September, students ticked fifteen boxes while they worked, and every item on the next week's lab quiz traced back to at least one of them.</span> <button type="button" class="ctx" data-i="4">In context ›</button></li><li><span class="q">Through the Math Readiness Initiative I have been recording the exact point where students stop in a calculation: at a fraction, a ratio, or a unit conversion.</span> <button type="button" class="ctx" data-i="5">In context ›</button></li><li><span class="q">On the first day of lab I give them a one-page handout with three conditions for learning: cognitive friction, active recall over the illusion of competence, and productive failure.</span> <button type="button" class="ctx" data-i="6">In context ›</button></li></ol>
+      <p class="brief-note">Each line is quoted word for word from the full text of this page. In context opens the full text at that sentence.</p>
+    </section>
     <div class="prose">
 <h2>Core Belief</h2>
 <p>If I treat teaching and learning as something to study, they do not behave like a simple natural
@@ -70,7 +76,7 @@ that drift, and it happens only when students and I both put effort in. That bel
 the past year. This year I focused on three variables: who my students are, how I teach, and, newest
 of all, AI.</p>
 <h2>My Students</h2>
-<p>My education master&#39;s program taught me that community college students come from very different
+<p>My education specialist program taught me that community college students come from very different
 backgrounds. Teaching them showed me how wide that range really is. I have taught a student who took
 chemistry with us at high-school age and is now in a combined bachelor&#39;s and master&#39;s program in
 engineering at a four-year university. I have taught adults who already had careers and enrolled
@@ -125,6 +131,6 @@ only show up across several of them.</p>
     <a class="next" href="student-evaluations.html"><span class="k">Next ›</span><span class="t">Student Evaluations</span></a>
   </nav>
   </article>
-</main><footer class="loc"><span class="l">Teaching Insights · 1 of 4</span><span class="r" id="loc-pct">0%</span></footer><script src="../assets/site.js?v=d69f825965"></script>
+</main><footer class="loc"><span class="l">Teaching Insights · 1 of 4</span><span class="r" id="loc-pct">0%</span></footer><script src="../assets/site.js?v=01ae89c6c7"></script>
 </body>
 </html>

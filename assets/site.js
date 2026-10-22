@@ -148,6 +148,54 @@
   /* Back/Forward can restore this page from memory with the text still faded out */
   addEventListener('pageshow', function(){ root.classList.remove('leaving'); });
 
+  /* ---- In brief: the page's own sentences, or the full text. The choice stays in this browser
+     for every page; a page without an In brief list always shows the full text. ---- */
+  var page = document.querySelector('.has-brief');
+  if (page){
+    var prose = page.querySelector('.prose'), btns = page.querySelectorAll('.view [data-view]');
+    var showView = function(v){
+      root.setAttribute('data-view', v);
+      try{ localStorage.setItem('rd-view', v); }catch(e){}
+      btns.forEach(function(b){ b.setAttribute('aria-pressed', String(b.dataset.view === v)); });
+      if (screen) screen.scrollTop = 0;
+      tick();
+    };
+    btns.forEach(function(b){ b.addEventListener('click', function(){ showView(b.dataset.view); }); });
+    btns.forEach(function(b){ b.setAttribute('aria-pressed', String(b.dataset.view === (root.getAttribute('data-view') === 'brief' ? 'brief' : 'full'))); });
+    /* In context: back to the full text, scrolled to that sentence, marked for a moment */
+    var squash = function(t){ return t.replace(/[\u2018\u2019]/g, "'").replace(/[\u201c\u201d]/g, '"'); };
+    var locate = function(sentence){
+      var walk = document.createTreeWalker(prose, NodeFilter.SHOW_TEXT), nodes = [], flat = '', map = [], n, prevSpace = true;
+      while ((n = walk.nextNode())){
+        var t = squash(n.nodeValue);
+        for (var i = 0; i < t.length; i++){
+          var ch = /\s/.test(t[i]) ? ' ' : t[i];
+          if (ch === ' ' && prevSpace) continue;
+          flat += ch; map.push([n, i]); prevSpace = ch === ' ';
+        }
+        if (!prevSpace){ flat += ' '; map.push([n, t.length]); prevSpace = true; }
+      }
+      var q = squash(sentence).replace(/\s+/g, ' ').trim(), at = flat.indexOf(q);
+      if (at < 0) return null;
+      var r = document.createRange(), a = map[at], b = map[at + q.length - 1];
+      r.setStart(a[0], a[1]); r.setEnd(b[0], Math.min(b[1] + 1, b[0].nodeValue.length));
+      return r;
+    };
+    page.querySelectorAll('.brief .ctx').forEach(function(c){
+      c.addEventListener('click', function(){
+        var q = c.parentNode.querySelector('.q').textContent;
+        showView('full');
+        var r = locate(q); if (!r || !screen) return;
+        var top = r.getBoundingClientRect().top - screen.getBoundingClientRect().top + screen.scrollTop;
+        screen.scrollTop = Math.max(0, top - screen.clientHeight * .3);
+        if (window.CSS && CSS.highlights && window.Highlight){
+          CSS.highlights.set('brief-at', new Highlight(r));
+          setTimeout(function(){ CSS.highlights.delete('brief-at'); }, 4000);
+        }
+      });
+    });
+  }
+
   /* ---- images: pushed to 16 grey levels, as an e-ink panel would draw them ---- */
   document.querySelectorAll('img[data-eink]').forEach(function(img){
     img.dataset.color = img.currentSrc || img.src;   /* the colour original, kept for the lightbox */

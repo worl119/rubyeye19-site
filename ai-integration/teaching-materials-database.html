@@ -8,8 +8,8 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Literata:ital,opsz,wght@0,7..72,300..700;1,7..72,300..700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../assets/site.css?v=d69f825965">
-<script>(function(){try{var r=document.documentElement,p=localStorage.getItem('rd-page');r.setAttribute('data-page',p||'grey');['face','size','lead','width','align'].forEach(function(k){var v=localStorage.getItem('rd-'+k);if(v)r.setAttribute('data-'+k,v);});}catch(e){document.documentElement.setAttribute('data-page','grey');}})();</script>
+<link rel="stylesheet" href="../assets/site.css?v=01ae89c6c7">
+<script>(function(){try{var r=document.documentElement,p=localStorage.getItem('rd-page');r.setAttribute('data-page',p||'grey');['face','size','lead','width','align','view'].forEach(function(k){var v=localStorage.getItem('rd-'+k);if(v)r.setAttribute('data-'+k,v);});}catch(e){document.documentElement.setAttribute('data-page','grey');}})();</script>
 </head>
 <body>
 <header class="status">
@@ -42,7 +42,7 @@
 </header>
 <nav class="goto" id="goto" hidden aria-label="Go to">
   <div class="goto-head"><span>Go To</span><button type="button" class="x" id="goto-close" aria-label="Close">×</button></div>
-  <div class="find"><input type="search" id="find" placeholder="Search this portfolio" aria-label="Search this portfolio" autocomplete="off" spellcheck="false" data-index="../assets/search.json?v=dcddbd9f6b"><p class="find-n" id="find-n" aria-live="polite"></p></div>
+  <div class="find"><input type="search" id="find" placeholder="Search this portfolio" aria-label="Search this portfolio" autocomplete="off" spellcheck="false" data-index="../assets/search.json?v=bb5ddee34d"><p class="find-n" id="find-n" aria-live="polite"></p></div>
   <div id="hits"></div>
   <div id="toc">
   <a class="row" href="../index.html"><span class="t">Cover</span></a>
@@ -50,12 +50,18 @@
   </div>
 </nav><nav class="side" aria-label="Contents"><ol><li><a class="s" href="../overview/index.html"><span class="n">1</span>Overview</a></li><li><a class="s" href="../teaching-insights/index.html"><span class="n">2</span>Teaching Insights</a></li><li><a class="s" href="../course-design/index.html"><span class="n">3</span>Course Design</a></li><li><a class="s" href="../math-readiness/index.html"><span class="n">4</span>Math Readiness Initiative</a></li><li><a class="s here" href="../ai-integration/index.html"><span class="n">5</span>AI Integration</a><ul><li><a class="p" href="../ai-integration/getting-started.html">Getting Started with AI</a></li><li><a class="p here" href="../ai-integration/teaching-materials-database.html" aria-current="page">Teaching Materials Database</a></li><li><a class="p" href="../ai-integration/connecting-ai-to-canvas.html">Connecting AI to Canvas</a></li><li><a class="p" href="../ai-integration/tools-for-students-and-lecture.html">Tools for Students and Lecture</a></li></ul></li><li><a class="s" href="../instructional-materials/index.html"><span class="n">6</span>Instructional Materials</a></li><li><a class="s" href="../collaboration/index.html"><span class="n">7</span>Collaboration</a></li><li><a class="s" href="../professional-activities/index.html"><span class="n">8</span>Professional Activities</a></li><li><a class="s" href="../looking-ahead/index.html"><span class="n">9</span>Looking Ahead</a></li></ol></nav>
 <main class="screen" id="screen">
-  <article class="page">
+  <article class="page has-brief">
     <header class="chapter">
       <p class="orn" aria-hidden="true">§</p>
       <h1>Teaching Materials Database</h1>
       
     </header>
+    <div class="view" role="group" aria-label="How much of this page to show"><span class="seg"><button type="button" data-view="full" aria-pressed="true">Full text</button><button type="button" data-view="brief" aria-pressed="false">In brief</button></span></div>
+    <section class="brief" aria-labelledby="brief-h">
+      <h2 id="brief-h">In brief</h2>
+      <ol><li><span class="q">Claude Code opens inside a folder on my computer.</span> <button type="button" class="ctx" data-i="0">In context ›</button></li><li><span class="q">One of these folders holds my teaching materials, built as a database.</span> <button type="button" class="ctx" data-i="1">In context ›</button></li><li><span class="q">An agent read through my slides and wrote their content out as text files, organized by chapter and topic.</span> <button type="button" class="ctx" data-i="2">In context ›</button></li><li><span class="q">I have taught CHEM V101 three times with recordings.</span> <button type="button" class="ctx" data-i="3">In context ›</button></li><li><span class="q">The notes built from the Zoom transcripts of those three semesters list, chapter by chapter, the places where students got stuck, each tagged with how many of the three semesters it came up in.</span> <button type="button" class="ctx" data-i="4">In context ›</button></li></ol>
+      <p class="brief-note">Each line is quoted word for word from the full text of this page. In context opens the full text at that sentence.</p>
+    </section>
     <div class="prose">
 <p>Claude Code opens inside a folder on my computer. Each folder holds one kind of work along with
 everything that has been written down about it, and the agent reads those files before it does
@@ -85,7 +91,7 @@ three semesters list, chapter by chapter, the places where students got stuck, e
 many of the three semesters it came up in. A place that came up once may come from something that
 happened that day. A place that came up in all three comes from the material itself, and students will
 likely get stuck there again. I read this list the evening before I teach a chapter, and it decided
-which of the simulations described below were built first.</p>
+which of the simulations on the <a class="xref" href="../instructional-materials/v101-simulations.html"><em>CHEM V101 Interactive Simulations</em></a> page were built first.</p>
 
     </div>
     <nav class="pager" aria-label="Previous and next">
@@ -93,6 +99,6 @@ which of the simulations described below were built first.</p>
     <a class="next" href="connecting-ai-to-canvas.html"><span class="k">Next ›</span><span class="t">Connecting AI to Canvas</span></a>
   </nav>
   </article>
-</main><footer class="loc"><span class="l">AI Integration · 2 of 4</span><span class="r" id="loc-pct">0%</span></footer><script src="../assets/site.js?v=d69f825965"></script>
+</main><footer class="loc"><span class="l">AI Integration · 2 of 4</span><span class="r" id="loc-pct">0%</span></footer><script src="../assets/site.js?v=01ae89c6c7"></script>
 </body>
 </html>

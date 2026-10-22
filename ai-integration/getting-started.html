@@ -8,8 +8,8 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Literata:ital,opsz,wght@0,7..72,300..700;1,7..72,300..700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../assets/site.css?v=d69f825965">
-<script>(function(){try{var r=document.documentElement,p=localStorage.getItem('rd-page');r.setAttribute('data-page',p||'grey');['face','size','lead','width','align'].forEach(function(k){var v=localStorage.getItem('rd-'+k);if(v)r.setAttribute('data-'+k,v);});}catch(e){document.documentElement.setAttribute('data-page','grey');}})();</script>
+<link rel="stylesheet" href="../assets/site.css?v=01ae89c6c7">
+<script>(function(){try{var r=document.documentElement,p=localStorage.getItem('rd-page');r.setAttribute('data-page',p||'grey');['face','size','lead','width','align','view'].forEach(function(k){var v=localStorage.getItem('rd-'+k);if(v)r.setAttribute('data-'+k,v);});}catch(e){document.documentElement.setAttribute('data-page','grey');}})();</script>
 </head>
 <body>
 <header class="status">
@@ -42,7 +42,7 @@
 </header>
 <nav class="goto" id="goto" hidden aria-label="Go to">
   <div class="goto-head"><span>Go To</span><button type="button" class="x" id="goto-close" aria-label="Close">×</button></div>
-  <div class="find"><input type="search" id="find" placeholder="Search this portfolio" aria-label="Search this portfolio" autocomplete="off" spellcheck="false" data-index="../assets/search.json?v=dcddbd9f6b"><p class="find-n" id="find-n" aria-live="polite"></p></div>
+  <div class="find"><input type="search" id="find" placeholder="Search this portfolio" aria-label="Search this portfolio" autocomplete="off" spellcheck="false" data-index="../assets/search.json?v=bb5ddee34d"><p class="find-n" id="find-n" aria-live="polite"></p></div>
   <div id="hits"></div>
   <div id="toc">
   <a class="row" href="../index.html"><span class="t">Cover</span></a>
@@ -50,12 +50,18 @@
   </div>
 </nav><nav class="side" aria-label="Contents"><ol><li><a class="s" href="../overview/index.html"><span class="n">1</span>Overview</a></li><li><a class="s" href="../teaching-insights/index.html"><span class="n">2</span>Teaching Insights</a></li><li><a class="s" href="../course-design/index.html"><span class="n">3</span>Course Design</a></li><li><a class="s" href="../math-readiness/index.html"><span class="n">4</span>Math Readiness Initiative</a></li><li><a class="s here" href="../ai-integration/index.html"><span class="n">5</span>AI Integration</a><ul><li><a class="p here" href="../ai-integration/getting-started.html" aria-current="page">Getting Started with AI</a></li><li><a class="p" href="../ai-integration/teaching-materials-database.html">Teaching Materials Database</a></li><li><a class="p" href="../ai-integration/connecting-ai-to-canvas.html">Connecting AI to Canvas</a></li><li><a class="p" href="../ai-integration/tools-for-students-and-lecture.html">Tools for Students and Lecture</a></li></ul></li><li><a class="s" href="../instructional-materials/index.html"><span class="n">6</span>Instructional Materials</a></li><li><a class="s" href="../collaboration/index.html"><span class="n">7</span>Collaboration</a></li><li><a class="s" href="../professional-activities/index.html"><span class="n">8</span>Professional Activities</a></li><li><a class="s" href="../looking-ahead/index.html"><span class="n">9</span>Looking Ahead</a></li></ol></nav>
 <main class="screen" id="screen">
-  <article class="page">
+  <article class="page has-brief">
     <header class="chapter">
       <p class="orn" aria-hidden="true">§</p>
       <h1>Getting Started with AI</h1>
       
     </header>
+    <div class="view" role="group" aria-label="How much of this page to show"><span class="seg"><button type="button" data-view="full" aria-pressed="true">Full text</button><button type="button" data-view="brief" aria-pressed="false">In brief</button></span></div>
+    <section class="brief" aria-labelledby="brief-h">
+      <h2 id="brief-h">In brief</h2>
+      <ol><li><span class="q">In April 2026, Michal Klacko of STRV published a framework that divides AI use into six levels: Skeptic, Tourist, Assisted Coder, Prompt-Driven Developer, AI-Native Engineer, and AI Architect.</span> <button type="button" class="ctx" data-i="0">In context ›</button></li><li><span class="q">My first three years stayed within the first two levels.</span> <button type="button" class="ctx" data-i="1">In context ›</button></li><li><span class="q">The repetitive part of my work that bothered me most turned out to be keeping track of commitments, such as when I had told a student I would get back to them, or what I had said would be on the next quiz.</span> <button type="button" class="ctx" data-i="2">In context ›</button></li><li><span class="q">We narrowed the plan to the two things my existing tools could not do: pull commitments out of lecture transcripts, and search my own saved notes by meaning.</span> <button type="button" class="ctx" data-i="3">In context ›</button></li><li><span class="q">I told Claude I did not really understand what Claude Code was, and installed it that day to try it.</span> <button type="button" class="ctx" data-i="4">In context ›</button></li><li><span class="q">From that point on, I moved the work out of the chat window.</span> <button type="button" class="ctx" data-i="5">In context ›</button></li><li><span class="q">By the end of June, the research paper I was developing for the Math Readiness Initiative, with its analysis scripts and manuscript files, had moved to Claude Code as well.</span> <button type="button" class="ctx" data-i="6">In context ›</button></li></ol>
+      <p class="brief-note">Each line is quoted word for word from the full text of this page. In context opens the full text at that sentence.</p>
+    </section>
     <div class="prose">
 <p>Over the past few years, AI has become one of the most talked-about topics at the college. Like
 everyone else, I was starting from scratch. In the beginning, &quot;using AI&quot; just meant typing questions
@@ -134,6 +140,6 @@ scripts and manuscript files, had moved to Claude Code as well.</p>
     <a class="next" href="teaching-materials-database.html"><span class="k">Next ›</span><span class="t">Teaching Materials Database</span></a>
   </nav>
   </article>
-</main><footer class="loc"><span class="l">AI Integration · 1 of 4</span><span class="r" id="loc-pct">0%</span></footer><script src="../assets/site.js?v=d69f825965"></script>
+</main><footer class="loc"><span class="l">AI Integration · 1 of 4</span><span class="r" id="loc-pct">0%</span></footer><script src="../assets/site.js?v=01ae89c6c7"></script>
 </body>
 </html>

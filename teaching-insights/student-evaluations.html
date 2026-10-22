@@ -8,8 +8,8 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Literata:ital,opsz,wght@0,7..72,300..700;1,7..72,300..700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../assets/site.css?v=d69f825965">
-<script>(function(){try{var r=document.documentElement,p=localStorage.getItem('rd-page');r.setAttribute('data-page',p||'grey');['face','size','lead','width','align'].forEach(function(k){var v=localStorage.getItem('rd-'+k);if(v)r.setAttribute('data-'+k,v);});}catch(e){document.documentElement.setAttribute('data-page','grey');}})();</script>
+<link rel="stylesheet" href="../assets/site.css?v=01ae89c6c7">
+<script>(function(){try{var r=document.documentElement,p=localStorage.getItem('rd-page');r.setAttribute('data-page',p||'grey');['face','size','lead','width','align','view'].forEach(function(k){var v=localStorage.getItem('rd-'+k);if(v)r.setAttribute('data-'+k,v);});}catch(e){document.documentElement.setAttribute('data-page','grey');}})();</script>
 </head>
 <body>
 <header class="status">
@@ -42,7 +42,7 @@
 </header>
 <nav class="goto" id="goto" hidden aria-label="Go to">
   <div class="goto-head"><span>Go To</span><button type="button" class="x" id="goto-close" aria-label="Close">×</button></div>
-  <div class="find"><input type="search" id="find" placeholder="Search this portfolio" aria-label="Search this portfolio" autocomplete="off" spellcheck="false" data-index="../assets/search.json?v=dcddbd9f6b"><p class="find-n" id="find-n" aria-live="polite"></p></div>
+  <div class="find"><input type="search" id="find" placeholder="Search this portfolio" aria-label="Search this portfolio" autocomplete="off" spellcheck="false" data-index="../assets/search.json?v=bb5ddee34d"><p class="find-n" id="find-n" aria-live="polite"></p></div>
   <div id="hits"></div>
   <div id="toc">
   <a class="row" href="../index.html"><span class="t">Cover</span></a>
@@ -50,12 +50,18 @@
   </div>
 </nav><nav class="side" aria-label="Contents"><ol><li><a class="s" href="../overview/index.html"><span class="n">1</span>Overview</a></li><li><a class="s here" href="../teaching-insights/index.html"><span class="n">2</span>Teaching Insights</a><ul><li><a class="p" href="../teaching-insights/teaching-philosophy.html">Teaching Philosophy</a></li><li><a class="p here" href="../teaching-insights/student-evaluations.html" aria-current="page">Student Evaluations</a></li><li><a class="p" href="../teaching-insights/committee-observation-feedback.html">Committee Observation Feedback</a></li><li><a class="p" href="../teaching-insights/self-appraisal.html">Self Appraisal</a></li></ul></li><li><a class="s" href="../course-design/index.html"><span class="n">3</span>Course Design</a></li><li><a class="s" href="../math-readiness/index.html"><span class="n">4</span>Math Readiness Initiative</a></li><li><a class="s" href="../ai-integration/index.html"><span class="n">5</span>AI Integration</a></li><li><a class="s" href="../instructional-materials/index.html"><span class="n">6</span>Instructional Materials</a></li><li><a class="s" href="../collaboration/index.html"><span class="n">7</span>Collaboration</a></li><li><a class="s" href="../professional-activities/index.html"><span class="n">8</span>Professional Activities</a></li><li><a class="s" href="../looking-ahead/index.html"><span class="n">9</span>Looking Ahead</a></li></ol></nav>
 <main class="screen" id="screen">
-  <article class="page">
+  <article class="page has-brief">
     <header class="chapter">
       <p class="orn" aria-hidden="true">§</p>
       <h1>Student Evaluations</h1>
       
     </header>
+    <div class="view" role="group" aria-label="How much of this page to show"><span class="seg"><button type="button" data-view="full" aria-pressed="true">Full text</button><button type="button" data-view="brief" aria-pressed="false">In brief</button></span></div>
+    <section class="brief" aria-labelledby="brief-h">
+      <h2 id="brief-h">In brief</h2>
+      <ol><li><span class="q">The figure reported throughout this page is item 21, &quot;Overall, how would you rate this instructor?&quot;</span> <button type="button" class="ctx" data-i="0">In context ›</button></li><li><span class="q">Across twenty-seven sections and six terms: 521 responses from 849 enrolled students, a 61.4% response rate, and an overall mean of 5.81.</span> <button type="button" class="ctx" data-i="1">In context ›</button></li><li><span class="q">The overall rating was 5.73 in my first year, 5.87 in my second, and 5.85 in my third.</span> <button type="button" class="ctx" data-i="2">In context ›</button></li><li><span class="q">Two Fall 2023 laboratory sections were rated 5.42 and 5.50, and after that term no section was rated below 5.67; the other first-year sections fall in the same range as the later years.</span> <button type="button" class="ctx" data-i="3">In context ›</button></li><li><span class="q">CHEM V104, which I first taught in Fall 2025, averaged 5.77 across its two sections, within the range of my CHEM V101 sections.</span> <button type="button" class="ctx" data-i="4">In context ›</button></li></ol>
+      <p class="brief-note">Each line is quoted word for word from the full text of this page. In context opens the full text at that sentence.</p>
+    </section>
     <div class="prose">
 <h2>The instrument</h2>
 <p>The district&#39;s <em>Student Evaluation of Faculty</em> instrument scores twenty-one rated items on a
@@ -71,8 +77,8 @@ V01B is now V120B. The older numbers are kept above because that is what the rep
 numbers are reused across terms, so a row is identified by its term together with its CRN.</p>
 <h2>Across review periods</h2>
 <div class="table-wrap"><table class="ruled"><thead><tr><th>Period</th><th>Sections</th><th>Responses</th><th>Enrolled</th><th>Rate</th><th>Overall</th></tr></thead><tbody><tr><td>Fall 2023 + Spring 2024</td><td>9</td><td>204</td><td>300</td><td>68.0%</td><td>5.73</td></tr><tr><td>Fall 2024 + Spring 2025</td><td>9</td><td>202</td><td>347</td><td>58.2%</td><td>5.87</td></tr><tr><td>Fall 2025 + Spring 2026</td><td>9</td><td>115</td><td>202</td><td>56.9%</td><td>5.85</td></tr></tbody></table></div>
-<p>Each period contains exactly nine sections. The rise between the first and second is <strong>+0.13</strong>;
-between the second and third it is <strong>−0.01</strong>, which is not a change.</p>
+<p>Each period contains exactly nine sections. The rise between the first and second is <strong>+0.14</strong>;
+between the second and third it is <strong>−0.02</strong>, which is not a change.</p>
 <p>Three sections returned a perfect 6.00: two Fall 2024 laboratory sections and one Spring 2026
 lecture section, the last of which had seventeen of twenty-four students respond and every one of
 them choose the top rating.</p>
@@ -101,6 +107,6 @@ third-year sections were, so the years are not identical comparisons.</p>
     <a class="next" href="committee-observation-feedback.html"><span class="k">Next ›</span><span class="t">Committee Observation Feedback</span></a>
   </nav>
   </article>
-</main><footer class="loc"><span class="l">Teaching Insights · 2 of 4</span><span class="r" id="loc-pct">0%</span></footer><script src="../assets/site.js?v=d69f825965"></script>
+</main><footer class="loc"><span class="l">Teaching Insights · 2 of 4</span><span class="r" id="loc-pct">0%</span></footer><script src="../assets/site.js?v=01ae89c6c7"></script>
 </body>
 </html>
